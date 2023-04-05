@@ -24,8 +24,6 @@ end
 --  ╰──────────────────────────────────────────────────────────╯
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-	["<C-]>"] = cmp.mapping.select_next_item(cmp_select),
-	["<A-]>"] = cmp.mapping.select_prev_item(cmp_select),
 	["<C-b>"] = cmp.mapping.scroll_docs(4),
 	["<C-f>"] = cmp.mapping.scroll_docs(-4),
 	["<C-y>"] = cmp.mapping.confirm({ select = true }),
@@ -41,7 +39,27 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 			fallback()
 		end
 	end, { "i", "s" }),
+	["<C-]>"] = cmp.mapping(function(fallback)
+		if cmp.visible() then
+			cmp.select_next_item()
+		elseif luasnip.expand_or_jumpable() then
+			luasnip.expand_or_jump()
+		elseif has_words_before() then
+			cmp.complete()
+		else
+			fallback()
+		end
+	end, { "i", "s" }),
 	["<S-Tab>"] = cmp.mapping(function(fallback)
+		if cmp.visible() then
+			cmp.select_prev_item()
+		elseif luasnip.jumpable(-1) then
+			luasnip.jump(-1)
+		else
+			fallback()
+		end
+	end, { "i", "s" }),
+	["<A-]>"] = cmp.mapping(function(fallback)
 		if cmp.visible() then
 			cmp.select_prev_item()
 		elseif luasnip.jumpable(-1) then
