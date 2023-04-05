@@ -12,8 +12,7 @@ return {
 	"glepnir/dashboard-nvim",
 
 	-- Utilities
-	{ "nvim-neo-tree/neo-tree.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
-	"nvim-tree/nvim-web-devicons",
+	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",

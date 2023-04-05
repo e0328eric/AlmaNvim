@@ -1,130 +1,111 @@
 local utils = require("almagest.utils")
 
 utils.cfgplugin("luasnip", function(ls)
-    local s = ls.snippet
-    local t = ls.text_node
-    local i = ls.insert_node
-    local fmt = require("luasnip.extras.fmt").fmt
+	local s = ls.snippet
+	local t = ls.text_node
+	local i = ls.insert_node
+	local fmt = require("luasnip.extras.fmt").fmt
 
-    ls.config
-        .setup({update_events = "TextChangedI", enable_autosnippets = true})
+	ls.config.setup({ update_events = "TextChangedI", enable_autosnippets = true })
 
-    ls.add_snippets("plaintex", {
-        s({trig = "MK", snippetType = "autosnippet"},
-          {t("$"), i(1), t("$"), i(0)}),
-        s("be", {t({"\\[", "    "}), i(1), t({"", "\\]", ""}), i(0)}),
-        s("oo", {t("\\infty ")}), s("-", {t("\\setminus ")}),
-        s({trig = "lrl", snippetType = "autosnippet"},
-          {t("\\{"), i(1), t("\\}"), i(0)}),
-        s({trig = "LRL", snippetType = "autosnippet"},
-          {t("\\left\\{"), i(1), t("\\right\\}"), i(0)}),
-        s({trig = "lrr", snippetType = "autosnippet"},
-          {t("("), i(1), t(")"), i(0)}),
-        s({trig = "LRR", snippetType = "autosnippet"},
-          {t("\\left("), i(1), t("\\right)"), i(0)}),
-        s({trig = "lrb", snippetType = "autosnippet"},
-          {t("\\\\{"), i(1), t("\\\\}"), i(0)}),
-        s({trig = "LRB", snippetType = "autosnippet"},
-          {t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0)}),
-        s({trig = "lrs", snippetType = "autosnippet"},
-          {t("["), i(1), t("]"), i(0)}),
-        s({trig = "LRS", snippetType = "autosnippet"},
-          {t("\\left["), i(1), t("\\right]"), i(0)}),
-        s({trig = "lra", snippetType = "autosnippet"},
-          {t("\\langle"), i(1), t("\\rangle"), i(0)}),
-        s({trig = "LRA", snippetType = "autosnippet"},
-          {t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0)}),
-        s({trig = "abs", snippetType = "snippet"}, {t("|"), i(1), t("|"), i(0)}),
-        s({trig = "ABS", snippetType = "autosnippet"},
-          {t("\\left|"), i(1), t("\\right|"), i(0)})
-    })
+	ls.add_snippets("plaintex", {
+		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$"), i(0) }),
+		s("be", { t({ "\\[", "    " }), i(1), t({ "", "\\]", "" }), i(0) }),
+		s("oo", { t("\\infty ") }),
+		s("-", { t("\\setminus ") }),
+		s({ trig = "lrl", snippetType = "autosnippet" }, { t("\\{"), i(1), t("\\}"), i(0) }),
+		s({ trig = "LRL", snippetType = "autosnippet" }, { t("\\left\\{"), i(1), t("\\right\\}"), i(0) }),
+		s({ trig = "lrr", snippetType = "autosnippet" }, { t("("), i(1), t(")"), i(0) }),
+		s({ trig = "LRR", snippetType = "autosnippet" }, { t("\\left("), i(1), t("\\right)"), i(0) }),
+		s({ trig = "lrb", snippetType = "autosnippet" }, { t("\\\\{"), i(1), t("\\\\}"), i(0) }),
+		s({ trig = "LRB", snippetType = "autosnippet" }, { t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0) }),
+		s({ trig = "lrs", snippetType = "autosnippet" }, { t("["), i(1), t("]"), i(0) }),
+		s({ trig = "LRS", snippetType = "autosnippet" }, { t("\\left["), i(1), t("\\right]"), i(0) }),
+		s({ trig = "lra", snippetType = "autosnippet" }, { t("\\langle"), i(1), t("\\rangle"), i(0) }),
+		s({ trig = "LRA", snippetType = "autosnippet" }, { t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0) }),
+		s({ trig = "abs", snippetType = "snippet" }, { t("|"), i(1), t("|"), i(0) }),
+		s({ trig = "ABS", snippetType = "autosnippet" }, { t("\\left|"), i(1), t("\\right|"), i(0) }),
+	})
 
-    ls.add_snippets("tex", {
-        s({trig = "MK", snippetType = "autosnippet"},
-          {t("$"), i(1), t("$"), i(0)}),
-        s("be", {t({"\\[", "    "}), i(1), t({"", "\\]", ""}), i(0)}),
-        s("oo", {t("\\infty ")}), s("-", {t("\\setminus ")}),
-        s({trig = "lrl", snippetType = "autosnippet"},
-          {t("\\{"), i(1), t("\\}"), i(0)}),
-        s({trig = "LRL", snippetType = "autosnippet"},
-          {t("\\left\\{"), i(1), t("\\right\\}"), i(0)}),
-        s({trig = "lrr", snippetType = "autosnippet"},
-          {t("("), i(1), t(")"), i(0)}),
-        s({trig = "LRR", snippetType = "autosnippet"},
-          {t("\\left("), i(1), t("\\right)"), i(0)}),
-        s({trig = "lrb", snippetType = "autosnippet"},
-          {t("\\\\{"), i(1), t("\\\\}"), i(0)}),
-        s({trig = "LRB", snippetType = "autosnippet"},
-          {t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0)}),
-        s({trig = "lrs", snippetType = "autosnippet"},
-          {t("["), i(1), t("]"), i(0)}),
-        s({trig = "LRS", snippetType = "autosnippet"},
-          {t("\\left["), i(1), t("\\right]"), i(0)}),
-        s({trig = "lra", snippetType = "autosnippet"},
-          {t("\\langle"), i(1), t("\\rangle"), i(0)}),
-        s({trig = "LRA", snippetType = "autosnippet"},
-          {t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0)}),
-        s({trig = "abs", snippetType = "snippet"}, {t("|"), i(1), t("|"), i(0)}),
-        s({trig = "ABS", snippetType = "autosnippet"},
-          {t("\\left|"), i(1), t("\\right|"), i(0)})
-    })
+	ls.add_snippets("tex", {
+		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$"), i(0) }),
+		s("be", { t({ "\\[", "    " }), i(1), t({ "", "\\]", "" }), i(0) }),
+		s("oo", { t("\\infty ") }),
+		s("-", { t("\\setminus ") }),
+		s({ trig = "lrl", snippetType = "autosnippet" }, { t("\\{"), i(1), t("\\}"), i(0) }),
+		s({ trig = "LRL", snippetType = "autosnippet" }, { t("\\left\\{"), i(1), t("\\right\\}"), i(0) }),
+		s({ trig = "lrr", snippetType = "autosnippet" }, { t("("), i(1), t(")"), i(0) }),
+		s({ trig = "LRR", snippetType = "autosnippet" }, { t("\\left("), i(1), t("\\right)"), i(0) }),
+		s({ trig = "lrb", snippetType = "autosnippet" }, { t("\\\\{"), i(1), t("\\\\}"), i(0) }),
+		s({ trig = "LRB", snippetType = "autosnippet" }, { t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0) }),
+		s({ trig = "lrs", snippetType = "autosnippet" }, { t("["), i(1), t("]"), i(0) }),
+		s({ trig = "LRS", snippetType = "autosnippet" }, { t("\\left["), i(1), t("\\right]"), i(0) }),
+		s({ trig = "lra", snippetType = "autosnippet" }, { t("\\langle"), i(1), t("\\rangle"), i(0) }),
+		s({ trig = "LRA", snippetType = "autosnippet" }, { t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0) }),
+		s({ trig = "abs", snippetType = "snippet" }, { t("|"), i(1), t("|"), i(0) }),
+		s({ trig = "ABS", snippetType = "autosnippet" }, { t("\\left|"), i(1), t("\\right|"), i(0) }),
+	})
 
-    ls.add_snippets("vesti", {
-        s({trig = "MK", snippetType = "autosnippet"},
-          {t("$"), i(1), t("$"), i(0)}),
-        s("be", {t({"\\[", "    "}), i(1), t({"", "\\]", ""}), i(0)}),
-        s("oo", {t("\\infty ")}), s("-", {t("\\setminus ")}),
-        s({trig = "lrl", snippetType = "autosnippet"},
-          {t("\\{"), i(1), t("\\}"), i(0)}),
-        s({trig = "LRL", snippetType = "autosnippet"},
-          {t("\\left\\{"), i(1), t("\\right\\}"), i(0)}),
-        s({trig = "lrr", snippetType = "autosnippet"},
-          {t("("), i(1), t(")"), i(0)}),
-        s({trig = "LRR", snippetType = "autosnippet"},
-          {t("\\left("), i(1), t("\\right)"), i(0)}),
-        s({trig = "lrb", snippetType = "autosnippet"},
-          {t("\\\\{"), i(1), t("\\\\}"), i(0)}),
-        s({trig = "LRB", snippetType = "autosnippet"},
-          {t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0)}),
-        s({trig = "lrs", snippetType = "autosnippet"},
-          {t("["), i(1), t("]"), i(0)}),
-        s({trig = "LRS", snippetType = "autosnippet"},
-          {t("\\left["), i(1), t("\\right]"), i(0)}),
-        s({trig = "lra", snippetType = "autosnippet"},
-          {t("\\langle"), i(1), t("\\rangle"), i(0)}),
-        s({trig = "LRA", snippetType = "autosnippet"},
-          {t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0)}),
-        s({trig = "abs", snippetType = "snippet"}, {t("|"), i(1), t("|"), i(0)}),
-        s({trig = "ABS", snippetType = "autosnippet"},
-          {t("\\left|"), i(1), t("\\right|"), i(0)})
-    })
+	ls.add_snippets("vesti", {
+		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$"), i(0) }),
+		s("be", { t({ "\\[", "    " }), i(1), t({ "", "\\]", "" }), i(0) }),
+		s("oo", { t("\\infty ") }),
+		s("-", { t("\\setminus ") }),
+		s({ trig = "lrl", snippetType = "autosnippet" }, { t("\\{"), i(1), t("\\}"), i(0) }),
+		s({ trig = "LRL", snippetType = "autosnippet" }, { t("\\left\\{"), i(1), t("\\right\\}"), i(0) }),
+		s({ trig = "lrr", snippetType = "autosnippet" }, { t("("), i(1), t(")"), i(0) }),
+		s({ trig = "LRR", snippetType = "autosnippet" }, { t("\\left("), i(1), t("\\right)"), i(0) }),
+		s({ trig = "lrb", snippetType = "autosnippet" }, { t("\\\\{"), i(1), t("\\\\}"), i(0) }),
+		s({ trig = "LRB", snippetType = "autosnippet" }, { t("\\left\\\\{"), i(1), t("\\right\\\\}"), i(0) }),
+		s({ trig = "lrs", snippetType = "autosnippet" }, { t("["), i(1), t("]"), i(0) }),
+		s({ trig = "LRS", snippetType = "autosnippet" }, { t("\\left["), i(1), t("\\right]"), i(0) }),
+		s({ trig = "lra", snippetType = "autosnippet" }, { t("\\langle"), i(1), t("\\rangle"), i(0) }),
+		s({ trig = "LRA", snippetType = "autosnippet" }, { t("\\left\\langle"), i(1), t("\\right\\rangle"), i(0) }),
+		s({ trig = "abs", snippetType = "snippet" }, { t("|"), i(1), t("|"), i(0) }),
+		s({ trig = "ABS", snippetType = "autosnippet" }, { t("\\left|"), i(1), t("\\right|"), i(0) }),
+	})
 
-    ls.add_snippets("c", {
-        s("header", fmt([[
+	ls.add_snippets("c", {
+		s(
+			"header",
+			fmt(
+				[[
         #ifndef {header_specifier}
         #define {header_specifier}
 
         {start_pos}
 
         #endif // {header_specifier}
-        ]], {header_specifier = i(1), start_pos = i(0)},
-                        {repeat_duplicates = true}))
-    })
+        ]],
+				{ header_specifier = i(1), start_pos = i(0) },
+				{ repeat_duplicates = true }
+			)
+		),
+	})
 
-    ls.add_snippets("cpp", {
-        s("header", fmt([[
+	ls.add_snippets("cpp", {
+		s(
+			"header",
+			fmt(
+				[[
         #ifndef {header_specifier}
         #define {header_specifier}
 
         {start_pos}
 
         #endif // {header_specifier}
-        ]], {header_specifier = i(1), start_pos = i(0)},
-                        {repeat_duplicates = true}))
-    })
+        ]],
+				{ header_specifier = i(1), start_pos = i(0) },
+				{ repeat_duplicates = true }
+			)
+		),
+	})
 
-    ls.add_snippets("toml", {
-        s({trig = "mkvocab", snippetType = "autosnippet"}, fmt([=[
+	ls.add_snippets("toml", {
+		s(
+			{ trig = "mkvocab", snippetType = "autosnippet" },
+			fmt(
+				[=[
     [[voca]]
     word = "{word}"
 
@@ -132,8 +113,14 @@ utils.cfgplugin("luasnip", function(ls)
     meaning = "{meaning}"
 
     {exit}
-    ]=], {word = i(1, "word"), meaning = i(2, "meaning"), exit = i(0)})),
-        s({trig = "mkvocas", snippetType = "autosnippet"}, fmt([=[
+    ]=],
+				{ word = i(1, "word"), meaning = i(2, "meaning"), exit = i(0) }
+			)
+		),
+		s(
+			{ trig = "mkvocas", snippetType = "autosnippet" },
+			fmt(
+				[=[
     [[voca]]
     word = "{word}"
 
@@ -142,12 +129,19 @@ utils.cfgplugin("luasnip", function(ls)
     synos = [{synos}]
 
     {exit}
-    ]=], {
-            word = i(1, "word"),
-            meaning = i(3, "meaning"),
-            synos = i(2, "synos"),
-            exit = i(0)
-        })), s({trig = "mkvocae", snippetType = "autosnippet"}, fmt([=[
+    ]=],
+				{
+					word = i(1, "word"),
+					meaning = i(3, "meaning"),
+					synos = i(2, "synos"),
+					exit = i(0),
+				}
+			)
+		),
+		s(
+			{ trig = "mkvocae", snippetType = "autosnippet" },
+			fmt(
+				[=[
     [[voca]]
     word = "{word}"
 
@@ -156,12 +150,19 @@ utils.cfgplugin("luasnip", function(ls)
     example = "{example}"
 
     {exit}
-    ]=], {
-            word = i(1, "word"),
-            meaning = i(3, "meaning"),
-            example = i(2, "example"),
-            exit = i(0)
-        })), s({trig = "mkvocafull", snippetType = "autosnippet"}, fmt([=[
+    ]=],
+				{
+					word = i(1, "word"),
+					meaning = i(3, "meaning"),
+					example = i(2, "example"),
+					exit = i(0),
+				}
+			)
+		),
+		s(
+			{ trig = "mkvocafull", snippetType = "autosnippet" },
+			fmt(
+				[=[
     [[voca]]
     word = "{word}"
 
@@ -171,17 +172,23 @@ utils.cfgplugin("luasnip", function(ls)
     example = "{example}"
 
     {exit}
-    ]=], {
-            word = i(1, "word"),
-            meaning = i(4, "meaning"),
-            synos = i(2, "synos"),
-            example = i(3, "example"),
-            exit = i(0)
-        }))
-    })
+    ]=],
+				{
+					word = i(1, "word"),
+					meaning = i(4, "meaning"),
+					synos = i(2, "synos"),
+					example = i(3, "example"),
+					exit = i(0),
+				}
+			)
+		),
+	})
 
-    ls.add_snippets("cmake", {
-        s("cmakeinit", fmt([[
+	ls.add_snippets("cmake", {
+		s(
+			{ trig = "__cmakeinit", snippetType = "autosnippet" },
+			fmt(
+				[[
         cmake_minimum_required(VERSION {cmake_version})
         project({project_name}
             VERSION     {project_version}
@@ -189,7 +196,7 @@ utils.cfgplugin("luasnip", function(ls)
 
         # Define C and C++ standard
         set(CMAKE_C_STANDARD 11)
-        set(CMAKE_CXX_STANDARD 17)
+        set(CMAKE_CXX_STANDARD 20)
 
         # For the purpose to use LSP for C++
         set(CMAKE_EXPORT_COMPILE_COMMANDS Yes)
@@ -206,13 +213,37 @@ utils.cfgplugin("luasnip", function(ls)
             set(COMPILER_FLAGS -O0 -ggdb -Wall -Wextra -Wpedantic)
         endif()
 
-        add_executable({project_name} src/main.cc)
+        file(GLOB {project_name}_SRC CONFIGURE_DEPENDS "./src/*.cc")
+
+        add_executable({project_name} ${{{project_name}_SRC}})
         target_compile_options({project_name} PUBLIC ${{COMPILER_FLAGS}})
-        ]], {
-            cmake_version = i(1),
-            project_name = i(2),
-            project_version = i(3),
-            project_description = i(4)
-        }, {repeat_duplicates = true}))
-    })
+        ]],
+				{
+					cmake_version = i(1),
+					project_name = i(2),
+					project_version = i(3),
+					project_description = i(4),
+				},
+				{ repeat_duplicates = true }
+			)
+		),
+		s(
+			{ trig = "__FetchContent", snippetType = "autosnippet" },
+			fmt(
+				[[
+        FetchContent_Declare(
+            {pkg_name}
+            GIT_REPOSITORY {git_repo}
+            GIT_TAG {git_tag})
+        FetchContent_MakeAvailable({pkg_name})
+        ]],
+				{
+					pkg_name = i(1),
+					git_repo = i(2),
+					git_tag = i(3),
+				},
+				{ repeat_duplicates = true }
+			)
+		),
+	})
 end)

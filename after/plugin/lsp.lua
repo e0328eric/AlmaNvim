@@ -27,10 +27,34 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-b>"] = cmp.mapping.scroll_docs(4),
 	["<C-f>"] = cmp.mapping.scroll_docs(-4),
 	["<C-y>"] = cmp.mapping.confirm({ select = true }),
-	["<C-Space>"] = cmp.mapping.complete(),
+	["<C-Space>"] = cmp.mapping.confirm({
+		behavior = cmp.ConfirmBehavior.Insert,
+		select = true,
+	}),
+	["<C-]>"] = function(fallback)
+		if not cmp.select_next_item() then
+			if vim.bo.buftype ~= "prompt" and has_words_before() then
+				cmp.complete()
+			else
+				fallback()
+			end
+		end
+	end,
+
+	["<A-]>"] = function(fallback)
+		if not cmp.select_prev_item() then
+			if vim.bo.buftype ~= "prompt" and has_words_before() then
+				cmp.complete()
+			else
+				fallback()
+			end
+		end
+	end,
 	["<Tab>"] = cmp.mapping(function(fallback)
 		if cmp.visible() then
 			cmp.select_next_item()
+		-- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+		-- they way you will only jump inside the snippet region
 		elseif luasnip.expand_or_jumpable() then
 			luasnip.expand_or_jump()
 		elseif has_words_before() then
@@ -39,27 +63,8 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 			fallback()
 		end
 	end, { "i", "s" }),
-	["<C-]>"] = cmp.mapping(function(fallback)
-		if cmp.visible() then
-			cmp.select_next_item()
-		elseif luasnip.expand_or_jumpable() then
-			luasnip.expand_or_jump()
-		elseif has_words_before() then
-			cmp.complete()
-		else
-			fallback()
-		end
-	end, { "i", "s" }),
+
 	["<S-Tab>"] = cmp.mapping(function(fallback)
-		if cmp.visible() then
-			cmp.select_prev_item()
-		elseif luasnip.jumpable(-1) then
-			luasnip.jump(-1)
-		else
-			fallback()
-		end
-	end, { "i", "s" }),
-	["<A-]>"] = cmp.mapping(function(fallback)
 		if cmp.visible() then
 			cmp.select_prev_item()
 		elseif luasnip.jumpable(-1) then
@@ -72,6 +77,12 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
+	snippet = {
+		-- REQUIRED - you must specify a snippet engine
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
 	window = {
 		completion = {
 			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
@@ -90,6 +101,12 @@ lsp.setup_nvim_cmp({
 			return kind
 		end,
 	},
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+	}, {
+		{ name = "buffer" },
+	}),
 })
 
 lsp.setup()
