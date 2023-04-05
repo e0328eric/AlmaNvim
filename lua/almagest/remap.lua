@@ -3,9 +3,13 @@ local utils = require("almagest.utils")
 vim.g.mapleader = " "
 
 utils.wkmap({
-    [" "] = {function() vim.cmd([[let @/=""]]) end, "Clear search highlights"},
-    b = {name = "+buffer", d = {":bdelete<CR>", "delete buffer"}},
-    e = { "<cmd>NeoTreeFloat<cr>", "Toggle Explorer" }
+	[" "] = {
+		function()
+			vim.cmd([[let @/=""]])
+		end,
+		"Clear search highlights",
+	},
+	b = { name = "+buffer", d = { ":bdelete<CR>", "delete buffer" } },
 })
 
 vim.keymap.set("n", "<Tab>", vim.cmd.BufferLineCycleNext)

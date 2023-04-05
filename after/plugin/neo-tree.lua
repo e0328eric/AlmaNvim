@@ -137,3 +137,7 @@ utils.cfgplugin("neo-tree", {
 		}
 	end,
 })
+
+utils.wkmap({
+	e = { "<cmd>Neotree toggle<cr>", "Toggle Explorer" },
+})
