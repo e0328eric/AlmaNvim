@@ -13,7 +13,7 @@ return {
 
 	-- Utilities
 	{ "nvim-neo-tree/neo-tree.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
-    "nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-web-devicons",
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
@@ -24,7 +24,7 @@ return {
 	"numToStr/Comment.nvim",
 	"j-hui/fidget.nvim",
 	"LudoPinelli/comment-box.nvim",
-	{ "folke/which-key.nvim",        lazy = true },
+	{ "folke/which-key.nvim", lazy = true },
 	{
 		"mg979/vim-visual-multi",
 		branch = "master",
@@ -40,8 +40,8 @@ return {
 		requires = "nvim-lua/plenary.nvim",
 	},
 
-    -- LSP
-{
+	-- LSP
+	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
 		dependencies = {
@@ -59,6 +59,7 @@ return {
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-cmdline" },
+			{ "onsails/lspkind.nvim" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "hrsh7th/cmp-nvim-lua" },
 			{ "L3MON4D3/LuaSnip" },
@@ -107,6 +108,5 @@ return {
 			require("crates").setup()
 		end,
 	},
-
 }
 -- LuaFormatter on
