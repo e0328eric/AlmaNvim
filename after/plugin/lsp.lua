@@ -1,6 +1,7 @@
 local lsp = require("lsp-zero")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+local utils = require("almagest.utils")
 
 lsp.preset("recommended")
 
@@ -135,9 +136,6 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end, opts())
-	vim.keymap.set("n", "<leader>vws", function()
-		vim.lsp.buf.workspace_symbol()
-	end, opts("Workspace Symbol"))
 	vim.keymap.set("n", "gl", function()
 		vim.diagnostic.open_float()
 	end, opts("Open diagnostic with floating window"))
@@ -147,16 +145,37 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "]d", function()
 		vim.diagnostic.goto_prev()
 	end, opts("Diagnostic goto previous"))
-	vim.keymap.set("n", "<leader>vca", function()
-		vim.lsp.buf.code_action()
-	end, opts("Code Action"))
-	vim.keymap.set("n", "<leader>vrr", function()
-		vim.lsp.buf.references()
-	end, opts("references"))
-	vim.keymap.set("n", "<leader>vrn", function()
-		vim.lsp.buf.rename()
-	end, opts("Rename symbols"))
 	vim.keymap.set("i", "<C-h>", function()
 		vim.lsp.buf.signature_help()
 	end, opts())
 end)
+
+utils.wkmap({
+	l = {
+		name = "+lsp",
+		a = {
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			"Code Action",
+		},
+		r = {
+			function()
+				vim.lsp.buf.rename()
+			end,
+			"Rename Symbols",
+		},
+		R = {
+			function()
+				vim.lsp.buf.references()
+			end,
+			"References",
+		},
+		s = {
+			function()
+				vim.lsp.buf.workspace_symbol()
+			end,
+			"Workspace Symbol",
+		},
+	},
+})
