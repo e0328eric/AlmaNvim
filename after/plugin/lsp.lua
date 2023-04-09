@@ -110,7 +110,18 @@ lsp.setup_nvim_cmp({
 	}),
 })
 
-lsp.setup()
+require("lspconfig").rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			diagnostics = {
+				enable = true,
+			},
+			check = {
+				command = "clippy",
+			},
+		},
+	},
+})
 
 vim.diagnostic.config({
 	virtual_text = true,
@@ -149,6 +160,8 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.signature_help()
 	end, opts())
 end)
+
+lsp.setup()
 
 utils.wkmap({
 	l = {
