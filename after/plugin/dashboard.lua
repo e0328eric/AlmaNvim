@@ -27,18 +27,6 @@ utils.cfgplugin("dashboard", {
 				key = "f",
 			},
 			{
-				desc = " Apps",
-				group = "DiagnosticHint",
-				action = "Telescope app",
-				key = "a",
-			},
-			{
-				desc = " dotfiles",
-				group = "Number",
-				action = "Telescope dotfiles",
-				key = "d",
-			},
-			{
 				desc = " quit",
 				action = "q!",
 				key = "q",
