@@ -27,7 +27,14 @@ utils.cfgplugin("dashboard", {
 				key = "f",
 			},
 			{
-				desc = " quit",
+				icon = " ",
+                icon_hl = "@property",
+				desc = "New File",
+				action = "enew",
+				key = "n",
+			},
+			{
+				desc = " Quit",
 				action = "q!",
 				key = "q",
 			},
