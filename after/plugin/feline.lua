@@ -141,22 +141,7 @@ utils.cfgplugin("feline", function(feline)
 
 			local clients = vim.lsp.get_active_clients({ bufnr = 0 })
 			if #clients ~= 0 then
-				if progress then
-					local spinners = {
-						"◜ ",
-						"◠ ",
-						"◝ ",
-						"◞ ",
-						"◡ ",
-						"◟ ",
-					}
-					local ms = vim.loop.hrtime() / 1000000
-					local frame = math.floor(ms / 120) % #spinners
-					local content = string.format("%%<%s", spinners[frame + 1])
-					return content or ""
-				else
-					return "לּ LSP"
-				end
+				return "󱘗 LSP"
 			end
 			return ""
 		end,
@@ -223,9 +208,9 @@ utils.cfgplugin("feline", function(feline)
 			local position = math.floor(line_ratio * 100)
 
 			if position <= 5 then
-				position = " TOP"
+				position = "󰘣 TOP"
 			elseif position >= 95 then
-				position = " BOT"
+				position = "󰘡 BOT"
 			else
 				position = chars[math.floor(line_ratio * #chars)] .. position .. "%%"
 			end
