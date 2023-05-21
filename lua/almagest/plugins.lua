@@ -9,7 +9,7 @@ return {
 	"norcalli/nvim-colorizer.lua",
 
 	-- main page
-	"glepnir/dashboard-nvim",
+	"goolord/alpha-nvim",
 
 	-- Utilities
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
@@ -85,6 +85,7 @@ return {
 	-- Language Specific
 	"qnighy/lalrpop.vim",
 	"alaviss/nim.nvim",
+	"e0328eric/vesti-vim",
 	{
 		"kaarmu/typst.vim",
 		ft = "typst",
