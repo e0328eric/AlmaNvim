@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
-	automatic_installation = { exclude = { "zls", "hls" } },
+	automatic_installation = { exclude = { "zls", "hls", "vuels" } },
 })
 
 local utils = require("almagest.utils")
@@ -177,37 +177,50 @@ end
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
 
-local default_lsps = {
-	"ccls",
-	"cmake",
-	"kotlin_language_server",
-	"lua_ls",
-	"nimls",
-	"pylsp",
-	"tsserver",
-	"typst_lsp",
-	"zls",
-}
-
-for _, lsp in ipairs(default_lsps) do
-	lspconfig[lsp].setup({
-		capabilities = capabilities,
-	})
-end
-
-lspconfig.rust_analyzer.setup({
-	settings = {
-		["rust-analyzer"] = {
-			check = {
-				command = "clippy",
-			},
-			diagnostics = {
-				enable = false,
+local lsp_configurations = {
+	{ name = "ccls", config = nil },
+	{ name = "cmake", config = nil },
+	{ name = "kotlin_language_server", config = nil },
+	{ name = "lua_ls", config = nil },
+	{ name = "nimls", config = nil },
+	{ name = "pylsp", config = nil },
+	{ name = "tsserver", config = nil },
+	{ name = "typst_lsp", config = nil },
+	{ name = "zls", config = nil },
+	{
+		name = "volar",
+		config = {
+			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+		},
+	},
+	{
+		name = "rust_analyzer",
+		config = {
+			settings = {
+				["rust-analyzer"] = {
+					check = {
+						command = "clippy",
+					},
+					diagnostics = {
+						enable = false,
+					},
+				},
 			},
 		},
 	},
-	capabilities = capabilities,
-})
+}
+
+for _, lsp in ipairs(lsp_configurations) do
+	if lsp.config == nil then
+		lspconfig[lsp.name].setup({
+			capabilities = capabilities,
+		})
+	else
+		local config = lsp.config
+		config.capabilities = capabilities
+		lspconfig[lsp.name].setup(config)
+	end
+end
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
