@@ -184,6 +184,8 @@ local lsp_configurations = {
 	{ name = "lua_ls", config = nil },
 	{ name = "nimls", config = nil },
 	{ name = "pylsp", config = nil },
+	{ name = "tailwindcss", config = nil },
+	{ name = "taplo", config = nil },
 	{ name = "tsserver", config = nil },
 	{ name = "typst_lsp", config = nil },
 	{ name = "zls", config = nil },

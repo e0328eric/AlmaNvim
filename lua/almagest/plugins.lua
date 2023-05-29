@@ -86,6 +86,7 @@ return {
 	"qnighy/lalrpop.vim",
 	"alaviss/nim.nvim",
 	"e0328eric/vesti-vim",
+	"simrat39/rust-tools.nvim",
 	{
 		"kaarmu/typst.vim",
 		ft = "typst",
