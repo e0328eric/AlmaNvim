@@ -9,8 +9,8 @@ vim.opt.expandtab = true
 vim.opt.foldenable = false
 vim.opt.foldmethod = "manual"
 vim.opt.guifont = "-misc-fixed-medium-r-normal-*-18-120-100-100-c-90-iso10646-1"
-vim.opt.guifontwide =
-    "-misc-fixed-medium-r-normal-*-18-120-100-100-c-180-iso10646-1"
+vim.opt.guifontwide = "-misc-fixed-medium-r-normal-*-18-120-100-100-c-180-iso10646-1"
+vim.opt.guicursor = ""
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.laststatus = 3
