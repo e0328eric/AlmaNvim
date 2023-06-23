@@ -21,7 +21,10 @@ return {
 	"mbbill/undotree",
 	"TimUntersberger/neogit",
 	"numToStr/Comment.nvim",
-	"j-hui/fidget.nvim",
+	{
+		"j-hui/fidget.nvim",
+		branch = "legacy",
+	},
 	"LudoPinelli/comment-box.nvim",
 	{ "folke/which-key.nvim", lazy = true },
 	{
@@ -51,6 +54,7 @@ return {
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
 	"L3MON4D3/LuaSnip",
+    "jose-elias-alvarez/null-ls.nvim",
 
 	-- Telescope
 	{
@@ -98,6 +102,10 @@ return {
 		config = function()
 			require("crates").setup()
 		end,
+	},
+	{
+		"LhKipp/nvim-nu",
+		cmd = "TSInstall nu",
 	},
 }
 -- LuaFormatter on
