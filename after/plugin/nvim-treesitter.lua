@@ -15,6 +15,7 @@ utils.cfgplugin("nvim-treesitter.configs", {
 		"java",
 		"javascript",
 		"kotlin",
+        "latex",
 		"lua",
 		"meson",
 		"rust",
