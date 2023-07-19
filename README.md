@@ -15,14 +15,15 @@ git clone https://github.com/e0328eric/AlmaNvim.git ~/.config/nvim
 ```
 
 ## Colorscheme
-The colorscheme setting is in `after/plugin/colorscheme.lua`. Since I am using [wezterm](https://wezfurlong.org/wezterm/) with background image, the colorscheme is set by transparent background.
-If you do not want to use transparent background image, comment some lines like this:
+The colorscheme setting is in `after/plugin/colorscheme.lua`. Since I am using
+[wezterm](https://wezfurlong.org/wezterm/) with background image, the colorscheme is set by
+transparent background.
+If you do not want to use transparent background image, remove `tribela/vim-transparent` plugin from
+`lua/almagest/plugin.lua`.
 ```lua
-utils.cfgplugin("base16-colorscheme", function()
-    vim.cmd("colorscheme " .. colorscheme)
-    -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-    -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
-
-    -- require("notify").setup({background_colour = "#000000"})
-end)
+return {
+    -- ...
+	"tribela/vim-transparent", -- remove or comment this line
+    -- ...
+}
 ```
