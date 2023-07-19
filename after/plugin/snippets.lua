@@ -10,7 +10,8 @@ utils.cfgplugin("luasnip", function(ls)
 
 	ls.add_snippets("typst", {
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
-		s("be", { t({ "$", "    " }), i(1), t({ "", "$", "" }) }),
+		s("be", { t({ "$", "  " }), i(1), t({ "", "$", "" }) }),
+		s("bee", { t("$ "), i(1), t(" $") }),
 	})
 
 	ls.add_snippets("plaintex", {

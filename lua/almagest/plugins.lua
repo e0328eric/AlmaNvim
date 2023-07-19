@@ -7,6 +7,7 @@ return {
 	"rcarriga/nvim-notify",
 	"stevearc/dressing.nvim",
 	"norcalli/nvim-colorizer.lua",
+	"tribela/vim-transparent",
 
 	-- main page
 	"goolord/alpha-nvim",
@@ -19,7 +20,6 @@ return {
 	"theprimeagen/harpoon",
 	"mhartington/formatter.nvim",
 	"mbbill/undotree",
-	"TimUntersberger/neogit",
 	"numToStr/Comment.nvim",
 	{
 		"j-hui/fidget.nvim",
@@ -54,7 +54,7 @@ return {
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
 	"L3MON4D3/LuaSnip",
-    "jose-elias-alvarez/null-ls.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
 
 	-- Telescope
 	{
