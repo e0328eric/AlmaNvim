@@ -32,12 +32,7 @@ utils.cfgplugin("nvim-tree", {
 
 	view = {
 		width = 30,
-		--height = 30,
 		side = "left",
-		mappings = {
-			custom_only = false,
-			list = {},
-		},
 	},
 })
 
