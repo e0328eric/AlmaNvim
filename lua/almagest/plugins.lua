@@ -2,6 +2,7 @@
 return {
 	-- Colorscheme
 	"RRethy/nvim-base16",
+	"shaunsingh/moonlight.nvim",
 	"freddiehaddad/feline.nvim",
 	"akinsho/bufferline.nvim",
 	"rcarriga/nvim-notify",
