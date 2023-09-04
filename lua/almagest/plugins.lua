@@ -2,7 +2,7 @@
 return {
 	-- Colorscheme
 	"RRethy/nvim-base16",
-	"shaunsingh/moonlight.nvim",
+	{ "kartikp10/noctis.nvim", dependencies = { "rktjmp/lush.nvim" } },
 	"freddiehaddad/feline.nvim",
 	"akinsho/bufferline.nvim",
 	"rcarriga/nvim-notify",
