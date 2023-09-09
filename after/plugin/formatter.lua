@@ -50,9 +50,9 @@ utils.cfgplugin("formatter", function(formatter)
 	})
 	utils.wkmap({ c = { f = { ":Format<CR>", "Format current file" } } })
 	vim.cmd([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost * FormatWrite
-augroup END
-]])
+        augroup FormatAutogroup
+          autocmd!
+          autocmd BufWritePost * FormatWrite
+        augroup END
+	]])
 end)

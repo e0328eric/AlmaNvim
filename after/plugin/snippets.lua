@@ -35,6 +35,21 @@ utils.cfgplugin("luasnip", function(ls)
 
 	ls.add_snippets("tex", {
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
+		s(
+			{ trig = "beg" },
+			fmt(
+				[[
+                \begin{{{env_name}}}
+                    {env_body}
+                \end{{{env_name}}}
+                ]],
+				{
+					env_name = i(1),
+					env_body = i(2),
+				},
+				{ repeat_duplicates = true }
+			)
+		),
 		s("be", { t({ "\\[", "    " }), i(1), t({ "", "\\]", "" }) }),
 		s("oo", { t("\\infty ") }),
 		s("-", { t("\\setminus ") }),
