@@ -219,6 +219,9 @@ utils.cfgplugin("luasnip", function(ls)
         set(CMAKE_C_STANDARD 11)
         set(CMAKE_CXX_STANDARD 20)
 
+        set(CMAKE_C_EXTENSIONS ON)
+        set(CMAKE_CXX_EXTENSIONS ON)
+
         # For the purpose to use LSP for C++
         set(CMAKE_EXPORT_COMPILE_COMMANDS Yes)
 
@@ -234,10 +237,12 @@ utils.cfgplugin("luasnip", function(ls)
             set(COMPILER_FLAGS -O0 -ggdb -Wall -Wextra -Wpedantic)
         endif()
 
-        file(GLOB {project_name}_SRC CONFIGURE_DEPENDS "./src/*.cc")
+        set({project_name}_SRCS "./src/main.c")
+        # file(GLOB {project_name}_SRCS CONFIGURE_DEPENDS "./src/*.cc")
 
-        add_executable({project_name} ${{{project_name}_SRC}})
+        add_executable({project_name} ${{{project_name}_SRCS}})
         target_compile_options({project_name} PUBLIC ${{COMPILER_FLAGS}})
+        # target_link_libraries({project_name} PRIVATE ncurses)
         ]],
 				{
 					cmake_version = i(1),
@@ -262,6 +267,51 @@ utils.cfgplugin("luasnip", function(ls)
 					pkg_name = i(1),
 					git_repo = i(2),
 					git_tag = i(3),
+				},
+				{ repeat_duplicates = true }
+			)
+		),
+	})
+
+	ls.add_snippets("meson", {
+		s(
+			{ trig = "__mesoninit", snippetType = "autosnippet" },
+			fmt(
+				[[
+            project(
+              '{project_name}',
+              'c',
+              license: ['MIT'],
+              version: '{project_version}',
+              meson_version: '>={meson_version}',
+              default_options: [
+                  'buildtype=debugoptimized',
+                  'b_lundef=false',
+                  'b_lto=true',
+                  'b_pie=true',
+                  'c_std=gnu11',
+                  'warning_level=1',
+              ]
+            )
+
+            # build_root = meson.project_build_root()
+            # source_root = meson.project_source_root()
+
+            # ncurses = dependency('libncurses')
+            # cjson = dependency('libcjson')
+
+            sources = files(
+                'src/main.c'
+            )
+
+            executable('{project_name}', sources
+            # dependencies: [ncurses, cjson],
+            )
+            ]],
+				{
+					project_name = i(1),
+					project_version = i(2),
+					meson_version = i(3),
 				},
 				{ repeat_duplicates = true }
 			)
