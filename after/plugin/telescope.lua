@@ -14,6 +14,7 @@ utils.cfgplugin("telescope", function(telescope)
 	})
 
 	pcall(telescope.load_extension, "fzf")
+	pcall(telescope.load_extension, "software-licenses")
 
 	utils.wkmap({
 		["/"] = {
@@ -41,5 +42,6 @@ utils.cfgplugin("telescope", function(telescope)
 			g = { builtin.live_grep, "Search by grep" },
 			d = { builtin.diagnostics, "Search Diagnostics" },
 		},
+		L = { "<cmd>Telescope software-licenses find<CR>", "insert license" },
 	})
 end)

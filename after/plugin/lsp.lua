@@ -179,7 +179,7 @@ end
 ---------------------------------------------------------------------------------------------------
 
 local lsp_configurations = {
-	{ name = "ccls", config = nil },
+	{ name = "clangd", config = nil },
 	{ name = "cmake", config = nil },
 	{ name = "gopls", config = nil },
 	{ name = "hls", config = nil },

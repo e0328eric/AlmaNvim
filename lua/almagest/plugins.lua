@@ -71,6 +71,7 @@ return {
 		},
 		lazy = true,
 	},
+	"chip/telescope-software-licenses.nvim",
 
 	-- Treesitter
 	{
