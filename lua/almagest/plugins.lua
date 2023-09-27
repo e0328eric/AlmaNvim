@@ -15,11 +15,11 @@ return {
 
 	-- Utilities
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "stevearc/conform.nvim", opts = {} },
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
 	"theprimeagen/harpoon",
-	"mhartington/formatter.nvim",
 	"mbbill/undotree",
 	"numToStr/Comment.nvim",
 	{
@@ -91,7 +91,10 @@ return {
 	-- Language Specific
 	"qnighy/lalrpop.vim",
 	"alaviss/nim.nvim",
-	"e0328eric/vesti-vim",
+	{
+		"e0328eric/vesti-vim",
+		branch = "main",
+	},
 	"simrat39/rust-tools.nvim",
 	{
 		"kaarmu/typst.vim",
