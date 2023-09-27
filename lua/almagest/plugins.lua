@@ -15,7 +15,6 @@ return {
 
 	-- Utilities
 	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
-	{ "stevearc/conform.nvim", opts = {} },
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
@@ -49,6 +48,7 @@ return {
 		branch = "master",
 		commit = nil,
 	},
+  'mhartington/formatter.nvim',
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"hrsh7th/cmp-buffer",
