@@ -38,6 +38,10 @@
     "nim": {
       "command": "nimlsp",
       "filetypes": ["nim"]
+    },
+    "typst": {
+      "command": "typst-lsp",
+      "filetypes": ["typst"]
     }
   }
 }
