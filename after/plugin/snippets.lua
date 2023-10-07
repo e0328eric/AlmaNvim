@@ -6,6 +6,25 @@ utils.cfgplugin("luasnip", function(ls)
 	local i = ls.insert_node
 	local fmt = require("luasnip.extras.fmt").fmt
 
+	-- Keybindings
+	vim.keymap.set({ "i" }, "<C-L>", function()
+		ls.expand()
+	end, { silent = true })
+	vim.keymap.set({ "i", "s" }, "<TAB>", function()
+		ls.jump(1)
+	end, { silent = true })
+	vim.keymap.set({ "i", "s" }, "<S-TAB>", function()
+		ls.jump(-1)
+	end, { silent = true })
+
+	--[[
+	vim.keymap.set({ "i", "s" }, "<C-E>", function()
+		if ls.choice_active() then
+			ls.change_choice(1)
+		end
+	end, { silent = true })
+    --]]
+
 	ls.config.setup({ update_events = "TextChangedI", enable_autosnippets = true })
 
 	ls.add_snippets("typst", {
