@@ -7,13 +7,13 @@ utils.cfgplugin("luasnip", function(ls)
 	local fmt = require("luasnip.extras.fmt").fmt
 
 	-- Keybindings
-	vim.keymap.set({ "i" }, "<C-L>", function()
+	vim.keymap.set({ "i" }, "<C-]>", function()
 		ls.expand()
 	end, { silent = true })
-	vim.keymap.set({ "i", "s" }, "<TAB>", function()
+	vim.keymap.set({ "i", "s" }, "<C-]>", function()
 		ls.jump(1)
 	end, { silent = true })
-	vim.keymap.set({ "i", "s" }, "<S-TAB>", function()
+	vim.keymap.set({ "i", "s" }, "<S-C-]>", function()
 		ls.jump(-1)
 	end, { silent = true })
 

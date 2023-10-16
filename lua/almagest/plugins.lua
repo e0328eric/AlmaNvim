@@ -101,9 +101,5 @@ return {
             require("crates").setup()
         end,
     },
-    {
-        "LhKipp/nvim-nu",
-        cmd = "TSInstall nu",
-    },
 }
 -- LuaFormatter on
