@@ -23,6 +23,10 @@ utils.cfgplugin("telescope", function(telescope)
 			end,
 			"Fuzzily search in current buffer",
 		},
+		["?"] = {
+			name = "+help",
+			k = { builtin.keymaps, "Show all keymaps for neovim" },
+		},
 		b = { b = { builtin.buffers, "Find existing buffers" } },
 		f = {
 			name = "+files",
