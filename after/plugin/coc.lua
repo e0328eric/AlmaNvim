@@ -85,10 +85,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 
 utils.wkmap({
 	-- Symbol renaming
-	r = {
-		name = "Symbol renaming",
-		n = { "<Plug>(coc-rename)", "coc-rename" },
-	},
 	c = {
 		name = "+coc",
 		A = { ":<C-u>CocList diagnostics<cr>", "coclist-diagnostics" },
@@ -106,7 +102,8 @@ utils.wkmap({
 			s = { "<Plug>(coc-codeaction-source)", "coc-codeaction-source" },
 		},
 		f = { "<Plug>(coc-format-selected)", "coc-format-selected" },
-		r = {
+		r = { "<Plug>(coc-rename)", "coc-rename" },
+		R = {
 			name = "+refactor",
 			e = { "<Plug>(coc-codeaction-refactor)", "coc-codeaction-refactor" },
 			r = { "<Plug>(coc-codeaction-refactor-selected)", "coc-codeaction-refactor-selected" },
