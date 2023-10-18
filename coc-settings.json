@@ -39,6 +39,10 @@
       "command": "nimlsp",
       "filetypes": ["nim"]
     },
+    "zlg": {
+      "command": "zls",
+      "filetypes": ["zig"]
+    },
     "typst": {
       "command": "typst-lsp",
       "filetypes": ["typst"]
