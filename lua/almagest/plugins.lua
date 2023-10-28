@@ -44,11 +44,18 @@ return {
 
     -- LSP
     {
-        "neoclide/coc.nvim",
-        branch = "release",
+    		"neovim/nvim-lspconfig",
+    		branch = "master",
+    		commit = nil,
     },
-    'mhartington/formatter.nvim',
+    "mhartington/formatter.nvim",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/nvim-cmp",
     "L3MON4D3/LuaSnip",
+    "jose-elias-alvarez/null-ls.nvim",
 
     -- Telescope
     {
@@ -101,5 +108,9 @@ return {
             require("crates").setup()
         end,
     },
+    {
+		"LhKipp/nvim-nu",
+		cmd = "TSInstall nu",
+	},
 }
 -- LuaFormatter on
