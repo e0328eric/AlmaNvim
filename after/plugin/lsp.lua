@@ -192,6 +192,17 @@ local lsp_configurations = {
 	{ name = "tsserver", config = nil },
 	{ name = "zls", config = nil },
 	{
+		name = "typst_lsp",
+		config = {
+			root_dir = lspconfig_util.root_pattern("*.typ"),
+			-- single_file_support = true,
+			settings = {
+				exportPdf = "onSave", -- Choose onType, onSave or never.
+				-- serverPath = "" -- Normally, there is no need to uncomment it.
+			},
+		},
+	},
+	{
 		name = "volar",
 		config = {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
