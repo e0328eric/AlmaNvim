@@ -38,4 +38,5 @@ vim.opt.undoreload = 1000
 vim.cmd([[
 au BufRead,BufNewFile *.h set filetype=c
 au BufRead,BufNewFile *.asm set filetype=nasm
+au BufRead,BufNewFile *.typ set filetype=typst
 ]])
