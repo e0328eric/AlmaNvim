@@ -18,7 +18,6 @@ return {
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
-	"theprimeagen/harpoon",
 	"mbbill/undotree",
 	"numToStr/Comment.nvim",
 	{
