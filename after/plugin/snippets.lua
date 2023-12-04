@@ -94,7 +94,7 @@ utils.cfgplugin("luasnip", function(ls)
 
 	ls.add_snippets("vesti", {
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
-		s("be", { t({ "\\[", "    " }), i(1), t({ "", "\\]", "" }) }),
+		s("be", { t({ "$$", "    " }), i(1), t({ "", "$$", "" }) }),
 		s("oo", { t("\\infty ") }),
 		s("-", { t("\\setminus ") }),
 		s({ trig = "lrl", snippetType = "autosnippet" }, { t("\\{"), i(1), t("\\}") }),
