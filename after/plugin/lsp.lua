@@ -208,7 +208,7 @@ local lsp_configurations = {
 			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
 		},
 	},
-	{
+	--[=[{
 		name = "rust_analyzer",
 		config = {
 			settings = {
@@ -222,7 +222,7 @@ local lsp_configurations = {
 				},
 			},
 		},
-	},
+	},--]=]
 }
 
 for _, lsp in ipairs(lsp_configurations) do
