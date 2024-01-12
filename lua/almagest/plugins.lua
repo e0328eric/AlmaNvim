@@ -14,7 +14,10 @@ return {
 	"goolord/alpha-nvim",
 
 	-- Utilities
-	{ "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
@@ -39,6 +42,11 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
+	},
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	-- LSP
