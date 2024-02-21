@@ -97,7 +97,9 @@ return {
 
 	-- Language Specific
 	"qnighy/lalrpop.vim",
+	"fedorenchik/fasm.vim",
 	"alaviss/nim.nvim",
+	"perillo/qbe.vim",
 	{
 		"e0328eric/vesti-vim",
 		branch = "main",
