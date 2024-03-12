@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
-	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake" } },
+	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd" } },
 })
 
 local utils = require("almagest.utils")
@@ -179,7 +179,7 @@ end
 ---------------------------------------------------------------------------------------------------
 
 local lsp_configurations = {
-	{ name = "clangd", config = nil },
+	-- { name = "ccls", config = nil },
 	{ name = "cmake", config = nil },
 	{ name = "gopls", config = nil },
 	{ name = "hls", config = nil },
@@ -265,6 +265,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				name = "+lsp",
 				a = { vim.lsp.buf.code_action, "Code Action" },
 				D = { vim.lsp.buf.type_definition, "Show the type definition" },
+				R = { "<cmd>LspRestart<CR>", "Restart lsp" },
 				r = { vim.lsp.buf.rename, "Rename the structure" },
 				f = {
 					function()

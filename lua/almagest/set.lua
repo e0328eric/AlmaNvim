@@ -41,5 +41,6 @@ au BufRead,BufNewFile *.asm set filetype=fasm
 au BufRead,BufNewFile *.inc set filetype=fasm
 au BufRead,BufNewFile *.ssa set filetype=qbe
 au BufRead,BufNewFile *.typ set filetype=typst
+au BufRead,BufNewFile *.gp set filetype=gnuplot
 au BufRead,BufNewFile *.v set filetype=v
 ]])

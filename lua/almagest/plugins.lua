@@ -96,10 +96,15 @@ return {
 	},
 
 	-- Language Specific
+	"ranjithshegde/ccls.nvim",
 	"qnighy/lalrpop.vim",
 	"fedorenchik/fasm.vim",
 	"alaviss/nim.nvim",
 	"perillo/qbe.vim",
+	"NoahTheDuke/vim-just",
+	"JuliaEditorSupport/julia-vim",
+	"dpezto/gnuplot.vim",
+	"ron-rs/ron.vim",
 	{
 		"e0328eric/vesti-vim",
 		branch = "main",
