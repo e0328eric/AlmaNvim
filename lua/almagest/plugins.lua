@@ -105,6 +105,7 @@ return {
 	"JuliaEditorSupport/julia-vim",
 	"dpezto/gnuplot.vim",
 	"ron-rs/ron.vim",
+	"kaarmu/typst.vim",
 	{
 		"e0328eric/vesti-vim",
 		branch = "main",

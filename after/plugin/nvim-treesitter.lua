@@ -35,14 +35,14 @@ utils.cfgplugin("nvim-treesitter.configs", {
 })
 
 -- tree-sitter install for typst
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.typst = {
-	install_info = {
-		url = "https://github.com/uben0/tree-sitter-typst.git",
-		files = { "src/scanner.c", "src/parser.c" },
-		branch = "master",
-		generate_requires_npm = false,
-		requires_generate_from_grammar = false,
-	},
-	filetype = "typ", -- if filetype does not match the parser name
-}
+-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+-- parser_config.typst = {
+-- install_info = {
+-- url = "https://github.com/uben0/tree-sitter-typst.git",
+-- files = { "src/scanner.c", "src/parser.c" },
+-- branch = "master",
+-- generate_requires_npm = false,
+-- requires_generate_from_grammar = false,
+-- },
+-- filetype = "typ", -- if filetype does not match the parser name
+-- }
