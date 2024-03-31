@@ -9,6 +9,7 @@ utils.cfgplugin("formatter", function(formatter)
 		log_level = vim.log.levels.WARN,
 
 		filetype = {
+			--[=[
 			c = {
 				function()
 					return {
@@ -27,6 +28,7 @@ utils.cfgplugin("formatter", function(formatter)
 					}
 				end,
 			},
+            --]=]
 			go = format_kind("go").gofmt,
 			haskell = {
 				function()
