@@ -145,6 +145,20 @@ utils.cfgplugin("luasnip", function(ls)
 				{ repeat_duplicates = true }
 			)
 		),
+		s(
+			"namespace",
+			fmt(
+				[[
+        namespace {namespace_specifier} {{
+
+        {start_pos}
+
+        }} // END OF NAMESPACE {namespace_specifier}
+        ]],
+				{ namespace_specifier = i(1), start_pos = i(0) },
+				{ repeat_duplicates = true }
+			)
+		),
 	})
 
 	ls.add_snippets("cmake", {
@@ -179,12 +193,15 @@ utils.cfgplugin("luasnip", function(ls)
             set(COMPILER_FLAGS -O0 -ggdb -Wall -Wextra -Wpedantic)
         endif()
 
-        set({project_name}_SRCS "./src/main.c")
+        set({project_name}_SRCS "./src/main.cc")
+        set({project_name}_LIBS "./src/lib.cc")
         # file(GLOB {project_name}_SRCS CONFIGURE_DEPENDS "./src/*.cc")
 
+        add_library({project_name}_lib)
+        target_sources({project_name}_lib PUBLIC FILE_SET CXX_MODULES FILES ${{{project_name}_LIBS}})
         add_executable({project_name} ${{{project_name}_SRCS}})
         target_compile_options({project_name} PUBLIC ${{COMPILER_FLAGS}})
-        # target_link_libraries({project_name} PRIVATE ncurses)
+        target_link_libraries({project_name} PRIVATE {project_name}_lib)
         ]],
 				{
 					cmake_version = i(1),

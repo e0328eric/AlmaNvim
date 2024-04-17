@@ -35,9 +35,9 @@ utils.cfgplugin("harpoon", function(harpoon)
 			name = "+harpoon",
 			a = {
 				function()
-					harpoon:list():append()
+					harpoon:list():add()
 				end,
-				"Append to the list",
+				"Add to the list",
 			},
 			r = {
 				function()
