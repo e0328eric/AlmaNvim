@@ -96,19 +96,6 @@ utils.cfgplugin("luasnip", function(ls)
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
 		s("be", { t({ "$$", "    " }), i(1), t({ "", "$$", "" }) }),
 		s("oo", { t("\\infty ") }),
-		s("-", { t("\\setminus ") }),
-		s({ trig = "lrl", snippetType = "autosnippet" }, { t("\\{"), i(1), t("\\}") }),
-		s({ trig = "LRL", snippetType = "autosnippet" }, { t("\\left\\{"), i(1), t("\\right\\}") }),
-		s({ trig = "lrr", snippetType = "autosnippet" }, { t("("), i(1), t(")") }),
-		s({ trig = "LRR", snippetType = "autosnippet" }, { t("\\left("), i(1), t("\\right)") }),
-		s({ trig = "lrb", snippetType = "autosnippet" }, { t("\\\\{"), i(1), t("\\\\}") }),
-		s({ trig = "LRB", snippetType = "autosnippet" }, { t("\\left\\\\{"), i(1), t("\\right\\\\}") }),
-		s({ trig = "lrs", snippetType = "autosnippet" }, { t("["), i(1), t("]") }),
-		s({ trig = "LRS", snippetType = "autosnippet" }, { t("\\left["), i(1), t("\\right]") }),
-		s({ trig = "lra", snippetType = "autosnippet" }, { t("\\langle"), i(1), t("\\rangle") }),
-		s({ trig = "LRA", snippetType = "autosnippet" }, { t("\\left\\langle"), i(1), t("\\right\\rangle") }),
-		s({ trig = "abs", snippetType = "snippet" }, { t("|"), i(1), t("|") }),
-		s({ trig = "ABS", snippetType = "autosnippet" }, { t("\\left|"), i(1), t("\\right|") }),
 	})
 
 	ls.add_snippets("c", {
