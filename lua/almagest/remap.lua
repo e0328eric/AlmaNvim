@@ -21,6 +21,11 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("v", "Q", "gq")
 
+vim.cmd([[
+inoremap <ScrollWheelUp>     <Nop>
+inoremap <ScrollWheelDown>   <Nop>
+]])
+
 vim.keymap.set("n", "<C-D>", "<nop>")
 
 vim.keymap.set("n", "<S-Up>", "<nop>")
