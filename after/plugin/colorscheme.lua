@@ -3,13 +3,14 @@ local utils = require("almagest.utils")
 local colorscheme_list = {
 	"base16-monokai",
 	"base16-gruvbox-dark-hard",
+	"base16-tokyo-night-terminal-dark",
 	"nightfox",
 	"nordfox",
 	"terafox",
 	"carbonfox",
 }
 
-local colorscheme = colorscheme_list[1]
+local colorscheme = colorscheme_list[3]
 
 require("nightfox").setup({
 	transparent = true,
