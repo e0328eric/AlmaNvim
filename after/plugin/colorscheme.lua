@@ -10,7 +10,7 @@ local colorscheme_list = {
 	"carbonfox",
 }
 
-local colorscheme = colorscheme_list[3]
+local colorscheme = colorscheme_list[4]
 
 require("nightfox").setup({
 	transparent = true,

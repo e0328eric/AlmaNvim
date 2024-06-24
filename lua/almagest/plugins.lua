@@ -113,7 +113,7 @@ return {
 		"e0328eric/vesti-vim",
 		branch = "main",
 	},
-	"simrat39/rust-tools.nvim",
+	-- "simrat39/rust-tools.nvim",
 	{
 		"saecki/crates.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
