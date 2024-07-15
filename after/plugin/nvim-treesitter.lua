@@ -20,6 +20,7 @@ utils.cfgplugin("nvim-treesitter.configs", {
 		"latex",
 		"lua",
 		"meson",
+        "nix",
 		"rust",
 		"scss",
 		"toml",
