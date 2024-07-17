@@ -23,7 +23,6 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 	"mbbill/undotree",
 	"numToStr/Comment.nvim",
-	"https://git.sr.ht/~reggie/licenses.nvim",
 	{
 		"j-hui/fidget.nvim",
 		branch = "legacy",
