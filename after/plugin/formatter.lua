@@ -1,4 +1,5 @@
 local utils = require("almagest.utils")
+local wk = require("which-key")
 
 utils.cfgplugin("formatter", function(formatter)
 	local format_kind = function(ext)
@@ -59,7 +60,9 @@ utils.cfgplugin("formatter", function(formatter)
 			["*"] = format_kind("any").remove_trailing_whitespace,
 		},
 	})
-	utils.wkmap({ c = { f = { ":Format<CR>", "Format current file" } } })
+    wk.add({
+        {"<leader>cf", ":Format<CR>", desc = "Format current file" },
+    })
 	vim.cmd([[
         augroup FormatAutogroup
           autocmd!

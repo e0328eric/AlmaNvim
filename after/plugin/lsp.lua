@@ -9,6 +9,7 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspconfig = require("lspconfig")
 local lspconfig_util = require("lspconfig.util")
+local wk = require("which-key")
 
 --  ╭──────────────────────────────────────────────────────────╮
 --  │                    cmp theme setting                     │
@@ -261,30 +262,28 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation" })
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Goto Reference" })
 
-		utils.wkmap({
-			l = {
-				name = "+lsp",
-				a = { vim.lsp.buf.code_action, "Code Action" },
-				D = { vim.lsp.buf.type_definition, "Show the type definition" },
-				R = { "<cmd>LspRestart<CR>", "Restart lsp" },
-				r = { vim.lsp.buf.rename, "Rename the structure" },
-				f = {
-					function()
-						vim.lsp.buf.format({ async = true })
-					end,
-					"Format the current buffer",
-				},
-				w = {
-					name = "+workspace",
-					a = { vim.lsp.buf.add_workspace_folder, "Add a workspace folder" },
-					r = { vim.lsp.buf.remove_workspace_folder, "Remove a workspace folder" },
-					l = {
-						function()
-							print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-						end,
-						"List all workspace folders",
-					},
-				},
+		wk.add({
+			{ "<leader>l", group = "+lsp" },
+			{ "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
+			{ "<leader>lD", vim.lsp.buf.type_definition, desc = "Show the type definition" },
+			{ "<leader>lR", "<cmd>LspRestart<CR>", desc = "Restart lsp" },
+			{ "<leader>lr", vim.lsp.buf.rename, desc = "Rename the structure" },
+			{
+				"<leader>lf",
+				function()
+					vim.lsp.buf.format({ async = true })
+				end,
+				desc = "Format the current buffer",
+			},
+			{ "<leader>lw", group = "+workspace" },
+			{ "<leader>lwa", vim.lsp.buf.add_workspace_folder, desc = "Add a workspace folder" },
+			{ "<leader>lwr", vim.lsp.buf.remove_workspace_folder, desc = "Remove a workspace folder" },
+			{
+				"<leader>lwl",
+				function()
+					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+				end,
+				desc = "List all workspace folders",
 			},
 		})
 	end,

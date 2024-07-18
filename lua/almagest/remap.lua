@@ -1,15 +1,16 @@
-local utils = require("almagest.utils")
+local wk = require("which-key")
 
 vim.g.mapleader = " "
 
-utils.wkmap({
-	[" "] = {
+wk.add({
+    {"<leader> ", 
 		function()
 			vim.cmd([[let @/=""]])
 		end,
-		"Clear search highlights",
-	},
-	b = { name = "+buffer", d = { ":bdelete<CR>", "delete buffer" } },
+		desc = "Clear search highlights",
+    },
+    {"<leader>b", group = "+buffer" },
+    {"<leader>bd",":bdelete<CR>", desc = "delete buffer" },
 })
 
 vim.keymap.set("n", "<Tab>", vim.cmd.BufferLineCycleNext)
