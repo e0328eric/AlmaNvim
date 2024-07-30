@@ -191,7 +191,6 @@ local lsp_configurations = {
 	{ name = "tailwindcss", config = nil },
 	{ name = "taplo", config = nil },
 	{ name = "tsserver", config = nil },
-	{ name = "vls", config = nil },
 	{ name = "zls", config = nil },
 	{
 		name = "typst_lsp",
