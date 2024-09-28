@@ -3,14 +3,15 @@ local wk = require("which-key")
 vim.g.mapleader = " "
 
 wk.add({
-    {"<leader> ", 
+	{
+		"<leader> ",
 		function()
 			vim.cmd([[let @/=""]])
 		end,
 		desc = "Clear search highlights",
-    },
-    {"<leader>b", group = "+buffer" },
-    {"<leader>bd",":bdelete<CR>", desc = "delete buffer" },
+	},
+	{ "<leader>b", group = "+buffer" },
+	{ "<leader>bd", ":bdelete<CR>", desc = "delete buffer" },
 })
 
 vim.keymap.set("n", "<Tab>", vim.cmd.BufferLineCycleNext)

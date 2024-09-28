@@ -57,7 +57,7 @@ utils.cfgplugin("formatter", function(formatter)
 			toml = format_kind("toml").taplo,
 			vue = format_kind("vue").prettier,
 			zig = format_kind("zig").zigfmt,
-			["*"] = format_kind("any").remove_trailing_whitespace,
+			--["*"] = format_kind("any").remove_trailing_whitespace,
 		},
 	})
     wk.add({

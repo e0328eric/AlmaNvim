@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
-	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd" } },
+	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd", } },
 })
 
 local utils = require("almagest.utils")
@@ -190,19 +190,18 @@ local lsp_configurations = {
 	{ name = "pylsp", config = nil },
 	{ name = "tailwindcss", config = nil },
 	{ name = "taplo", config = nil },
-	{ name = "tsserver", config = nil },
 	{ name = "zls", config = nil },
-	{
-		name = "typst_lsp",
-		config = {
-			root_dir = lspconfig_util.root_pattern("*.typ"),
-			-- single_file_support = true,
-			settings = {
-				exportPdf = "onSave", -- Choose onType, onSave or never.
-				-- serverPath = "" -- Normally, there is no need to uncomment it.
-			},
-		},
-	},
+	--{
+	--	name = "typst_lsp",
+	--	config = {
+	--		root_dir = lspconfig_util.root_pattern("*.typ"),
+	--		-- single_file_support = true,
+	--		settings = {
+	--			exportPdf = "onSave", -- Choose onType, onSave or never.
+	--			-- serverPath = "" -- Normally, there is no need to uncomment it.
+	--		},
+	--	},
+	--},
 	{
 		name = "volar",
 		config = {
