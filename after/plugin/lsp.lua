@@ -144,7 +144,7 @@ cmp.setup({
 	},
 })
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+--local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 ---------------------------------------------------------------------------------------------------
 --    UI Settings
@@ -182,13 +182,12 @@ end
 local lsp_configurations = {
 	-- { name = "ccls", config = nil },
 	{ name = "cmake", config = nil },
-	{ name = "gopls", config = nil },
+	--{ name = "gopls", config = nil },
 	{ name = "hls", config = nil },
 	{ name = "kotlin_language_server", config = nil },
 	{ name = "lua_ls", config = nil },
 	{ name = "nimls", config = nil },
 	{ name = "pylsp", config = nil },
-	{ name = "tailwindcss", config = nil },
 	{ name = "taplo", config = nil },
 	{ name = "zls", config = nil },
 	--{
@@ -202,12 +201,6 @@ local lsp_configurations = {
 	--		},
 	--	},
 	--},
-	{
-		name = "volar",
-		config = {
-			filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-		},
-	},
 	{
 		name = "rust_analyzer",
 		config = {
