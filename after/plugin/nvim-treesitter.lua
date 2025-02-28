@@ -20,7 +20,7 @@ utils.cfgplugin("nvim-treesitter.configs", {
 		"latex",
 		"lua",
 		"meson",
-        "nix",
+		"nix",
 		"rust",
 		"scss",
 		"toml",
@@ -35,15 +35,15 @@ utils.cfgplugin("nvim-treesitter.configs", {
 	highlight = { enable = true, additional_vim_regex_highlighting = false },
 })
 
--- tree-sitter install for typst
--- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
--- parser_config.typst = {
--- install_info = {
--- url = "https://github.com/uben0/tree-sitter-typst.git",
--- files = { "src/scanner.c", "src/parser.c" },
--- branch = "master",
--- generate_requires_npm = false,
--- requires_generate_from_grammar = false,
--- },
--- filetype = "typ", -- if filetype does not match the parser name
--- }
+-- tree-sitter install for vesti
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.vesti = {
+	install_info = {
+		url = "https://github.com/e0328eric/tree-sitter-vesti.git",
+		files = { "src/parser.c" },
+		branch = "main",
+		generate_requires_npm = false,
+		requires_generate_from_grammar = false,
+	},
+	filetype = "vesti", -- if filetype does not match the parser name
+}

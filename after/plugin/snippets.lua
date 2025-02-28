@@ -96,7 +96,6 @@ utils.cfgplugin("luasnip", function(ls)
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
 		s("be", { t({ "$$", "    " }), i(1), t({ "", "$$", "" }) }),
 		s("eq", { t({ "useenv equation { \\label{"}), i(1), t({"}", "    " }), i(2), t({ "", "}", "" }) }),
-		s("oo", { t("\\infty ") }),
 	})
 
 	ls.add_snippets("c", {

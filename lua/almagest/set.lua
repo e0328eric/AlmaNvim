@@ -5,7 +5,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
--- vim.opt.fileencoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+vim.opt.fileformat = "unix"
 vim.opt.foldenable = false
 vim.opt.foldmethod = "manual"
 vim.opt.guifont = "-misc-fixed-medium-r-normal-*-18-120-100-100-c-90-iso10646-1"
@@ -43,4 +44,5 @@ au BufRead,BufNewFile *.ssa set filetype=qbe
 au BufRead,BufNewFile *.typ set filetype=typst
 au BufRead,BufNewFile *.gp set filetype=gnuplot
 au BufRead,BufNewFile *.v set filetype=v
+au BufRead,BufNewFile *.ves set filetype=vesti
 ]])
