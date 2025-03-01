@@ -3,12 +3,15 @@ return {
 	-- Colorscheme
 	"RRethy/nvim-base16",
 	"EdenEast/nightfox.nvim",
-	"freddiehaddad/feline.nvim",
 	"akinsho/bufferline.nvim",
 	"rcarriga/nvim-notify",
 	"stevearc/dressing.nvim",
 	"norcalli/nvim-colorizer.lua",
 	"tribela/vim-transparent",
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
 	-- main page
 	"goolord/alpha-nvim",
