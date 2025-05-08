@@ -18,6 +18,7 @@
 ((KEYWORD_ltx3off) @keyword)
 ((KEYWORD_nonstopmode) @keyword)
 ((KEYWORD_luacode) @keyword)
+((KEYWORD_mathmode) @keyword)
 
 ;; Identifiers
 ((class_pkg_name) @type)
