@@ -1,7 +1,7 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
-	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd", } },
+	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd" } },
 })
 
 local utils = require("almagest.utils")
@@ -178,6 +178,18 @@ for type, icon in pairs(signs) do
 end
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
+
+-- Floating text in nvim-lsp's diagnostics
+vim.diagnostic.config({
+	virtual_lines = {
+		prefix = "■",
+		current_line = true,
+	},
+	severity_sort = true,
+	float = {
+		source = "always",
+	},
+})
 
 local lsp_configurations = {
 	-- { name = "ccls", config = nil },
