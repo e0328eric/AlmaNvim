@@ -11,7 +11,8 @@ wk.add({
 		desc = "Clear search highlights",
 	},
 	{ "<leader>b", group = "+buffer" },
-	{ "<leader>bd", ":bdelete<CR>", desc = "delete buffer" },
+	{ "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", desc = "delete buffer" },
+	{ "<leader>bq", ":bdelete<CR>", desc = "delete buffer and window" },
 })
 
 vim.keymap.set("n", "<Tab>", vim.cmd.BufferLineCycleNext)
