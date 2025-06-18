@@ -194,6 +194,7 @@ vim.diagnostic.config({
 local lsp_configurations = {
 	-- { name = "ccls", config = nil },
 	{ name = "cmake", config = nil },
+	{ name = "omnisharp", config = nil },
 	--{ name = "gopls", config = nil },
 	{ name = "hls", config = nil },
 	{ name = "kotlin_language_server", config = nil },
