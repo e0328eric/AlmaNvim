@@ -99,7 +99,6 @@ return {
 	},
 
 	-- Language Specific
-	"ranjithshegde/ccls.nvim",
 	"gleam-lang/gleam.vim",
 	"qnighy/lalrpop.vim",
 	"fedorenchik/fasm.vim",
