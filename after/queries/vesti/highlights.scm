@@ -19,6 +19,7 @@
 ((KEYWORD_nonstopmode) @keyword)
 ((KEYWORD_luacode) @keyword)
 ((KEYWORD_mathmode) @keyword)
+((KEYWORD_compty) @keyword)
 
 ;; Identifiers
 ((class_pkg_name) @type)
