@@ -119,10 +119,6 @@ return {
 		end,
 	},
 	{
-		"LhKipp/nvim-nu",
-		cmd = "TSInstall nu",
-	},
-	{
 		"Julian/lean.nvim",
 		event = { "BufReadPre *.lean", "BufNewFile *.lean" },
 
