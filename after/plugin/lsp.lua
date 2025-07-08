@@ -4,7 +4,6 @@ require("mason-lspconfig").setup({
 	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd" } },
 })
 
-local utils = require("almagest.utils")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspconfig = require("lspconfig")
@@ -210,21 +209,21 @@ local lsp_configurations = {
 			single_file_support = true,
 		},
 	},
-	{
-		name = "rust_analyzer",
-		config = {
-			settings = {
-				["rust-analyzer"] = {
-					check = {
-						command = "clippy",
-					},
-					diagnostics = {
-						enable = false,
-					},
-				},
-			},
-		},
-	},
+	--{
+	--	name = "rust_analyzer",
+	--	config = {
+	--		settings = {
+	--			["rust-analyzer"] = {
+	--				check = {
+	--					command = "clippy",
+	--				},
+	--				diagnostics = {
+	--					enable = false,
+	--				},
+	--			},
+	--		},
+	--	},
+	--},
 }
 
 for _, lsp in ipairs(lsp_configurations) do

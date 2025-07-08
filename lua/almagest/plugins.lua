@@ -109,8 +109,11 @@ return {
 	"dpezto/gnuplot.vim",
 	"ron-rs/ron.vim",
 	"kaarmu/typst.vim",
-
-	"simrat39/rust-tools.nvim",
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^6", -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
 	{
 		"saecki/crates.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
