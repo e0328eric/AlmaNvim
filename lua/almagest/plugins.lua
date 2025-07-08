@@ -110,11 +110,6 @@ return {
 	"ron-rs/ron.vim",
 	"kaarmu/typst.vim",
 	{
-		"mrcjkb/rustaceanvim",
-		version = "^6", -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
-	{
 		"saecki/crates.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()

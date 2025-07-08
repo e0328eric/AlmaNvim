@@ -1,9 +1,10 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {},
-	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "nimls", "cmake", "clangd" } },
+	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "cmake", "clangd" } },
 })
 
+local utils = require("almagest.utils")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspconfig = require("lspconfig")
@@ -198,7 +199,7 @@ local lsp_configurations = {
 	{ name = "hls", config = nil },
 	{ name = "kotlin_language_server", config = nil },
 	{ name = "lua_ls", config = nil },
-	{ name = "nimls", config = nil },
+	{ name = "nim_langserver", config = nil },
 	{ name = "pylsp", config = nil },
 	{ name = "taplo", config = nil },
 	{ name = "zls", config = nil },
@@ -209,21 +210,22 @@ local lsp_configurations = {
 			single_file_support = true,
 		},
 	},
-	--{
-	--	name = "rust_analyzer",
-	--	config = {
-	--		settings = {
-	--			["rust-analyzer"] = {
-	--				check = {
-	--					command = "clippy",
-	--				},
-	--				diagnostics = {
-	--					enable = false,
-	--				},
-	--			},
-	--		},
-	--	},
-	--},
+	{
+		name = "rust_analyzer",
+		config = {
+			settings = {
+				["rust-analyzer"] = {
+					check = {
+						command = "clippy",
+					},
+					diagnostics = {
+						enable = false,
+					},
+					singleFileSupport = true,
+				},
+			},
+		},
+	},
 }
 
 for _, lsp in ipairs(lsp_configurations) do
