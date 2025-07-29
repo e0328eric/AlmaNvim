@@ -2,7 +2,7 @@
 vim.opt.autoindent = true
 vim.opt.autoread = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 vim.opt.encoding = "utf-8"
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
@@ -31,7 +31,7 @@ vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.title = true
-vim.opt.textwidth = 80
+vim.opt.textwidth = 100
 vim.opt.undofile = true
 vim.opt.undolevels = 100
 vim.opt.undoreload = 1000
