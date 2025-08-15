@@ -202,7 +202,7 @@ local lsp_configurations = {
 	{ name = "nim_langserver", config = nil },
 	{ name = "pylsp", config = nil },
 	{ name = "taplo", config = nil },
-	{ name = "zls", config = nil },
+	--{ name = "zls", config = nil },
 	{
 		name = "tinymist",
 		config = {
