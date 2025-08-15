@@ -4,7 +4,7 @@ require("mason-lspconfig").setup({
 	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "cmake", "clangd" } },
 })
 
-local utils = require("almagest.utils")
+local util = require("lspconfig.util")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 local lspconfig = require("lspconfig")
@@ -228,6 +228,7 @@ local lsp_configurations = {
 	},
 }
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 for _, lsp in ipairs(lsp_configurations) do
 	if lsp.config == nil then
 		lspconfig[lsp.name].setup({
