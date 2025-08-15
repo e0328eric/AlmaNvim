@@ -40,3 +40,13 @@ vim.keymap.set("v", "<S-Down>", "<nop>")
 
 vim.keymap.set("n", "<C-\\>", "O")
 vim.keymap.set("i", "<C-\\>", "<C-[>O")
+
+local modes = { "n", "v", "x", "o", "i", "t", "c" } -- normal/visual/select/op-pending/insert/terminal/cmdline
+for _, m in ipairs(modes) do
+	vim.keymap.set(m, "<PageUp>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(m, "<PageDown>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(m, "<S-PageUp>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(m, "<S-PageDown>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(m, "<C-PageUp>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(m, "<C-PageDown>", "<Nop>", { noremap = true, silent = true })
+end
