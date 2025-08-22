@@ -24,13 +24,6 @@ utils.cfgplugin("harpoon", function(harpoon)
             :find()
     end
 
-    vim.keymap.set("n", "<C-q>", function()
-        harpoon:list():prev()
-    end, { desc = "Move to prev harpoon list" })
-    vim.keymap.set("n", "<C-e>", function()
-        harpoon:list():next()
-    end, { desc = "Move to next harpoon list" })
-
     wk.add({
         { "<leader>h", group = "+harpoon" },
         {
@@ -53,6 +46,20 @@ utils.cfgplugin("harpoon", function(harpoon)
                 toggle_telescope(harpoon:list())
             end,
             desc = "Open harpoon window",
+        },
+        {
+            "<leader>h"[,
+            function()
+                harpoon:list():prev()
+            end,
+            desc = "Move to prev harpoon list",
+        },
+        {
+            "<leader>h]",
+            function()
+                harpoon:list():next()
+            end,
+            desc = "Move to next harpoon list",
         },
     })
 end)
