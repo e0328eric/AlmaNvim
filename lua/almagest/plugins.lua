@@ -3,7 +3,6 @@ return {
 	-- Colorscheme
 	"RRethy/nvim-base16",
 	"EdenEast/nightfox.nvim",
-	"akinsho/bufferline.nvim",
 	"rcarriga/nvim-notify",
 	"stevearc/dressing.nvim",
 	"norcalli/nvim-colorizer.lua",
@@ -17,15 +16,16 @@ return {
 	"goolord/alpha-nvim",
 
 	-- Utilities
-	{
-		"nvim-tree/nvim-tree.lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	"akinsho/toggleterm.nvim",
 	"prabirshrestha/asyncomplete.vim",
 	"lukas-reineke/indent-blankline.nvim",
 	"mbbill/undotree",
 	"numToStr/Comment.nvim",
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		lazy = false,
+	},
 	{
 		"j-hui/fidget.nvim",
 		branch = "legacy",

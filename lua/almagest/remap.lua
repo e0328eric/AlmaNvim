@@ -11,12 +11,14 @@ wk.add({
 		desc = "Clear search highlights",
 	},
 	{ "<leader>b", group = "+buffer" },
-	{ "<leader>bd", ":bp<bar>sp<bar>bn<bar>bd<CR>", desc = "delete buffer" },
-	{ "<leader>bq", ":bdelete<CR>", desc = "delete buffer and window" },
+	{ "<leader>bd", "<cmd>bp<bar>sp<bar>bn<bar>bd<CR>", desc = "delete buffer" },
+	{ "<leader>bq", "<cmd>bdelete<CR>", desc = "delete buffer and window" },
+	{ "<leader>b[", "<cmd>bprevious<CR>", desc = "move to the previous buffer" },
+	{ "<leader>b]", "<cmd>bnext<CR>", desc = "move to the next buffer" },
 })
 
-vim.keymap.set("n", "<Tab>", vim.cmd.BufferLineCycleNext)
-vim.keymap.set("n", "<S-Tab>", vim.cmd.BufferLineCyclePrev)
+vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
