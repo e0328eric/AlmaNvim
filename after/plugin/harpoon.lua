@@ -27,7 +27,7 @@ utils.cfgplugin("harpoon", function(harpoon)
 	wk.add({
 		{ "<leader>h", group = "+harpoon" },
 		{
-			"<leader>ha",
+			"<leader>hh",
 			function()
 				harpoon:list():add()
 			end,
