@@ -10,7 +10,7 @@ utils.cfgplugin("formatter", function(formatter)
 		log_level = vim.log.levels.WARN,
 
 		filetype = {
-			--[=[
+			--[[
 			c = {
 				function()
 					return {
@@ -29,8 +29,9 @@ utils.cfgplugin("formatter", function(formatter)
 					}
 				end,
 			},
-            --]=]
+            --]]
 			go = format_kind("go").gofmt,
+			--[[
 			haskell = {
 				function()
 					return {
@@ -40,6 +41,7 @@ utils.cfgplugin("formatter", function(formatter)
 					}
 				end,
 			},
+            --]]
 			nim = {
 				function()
 					return {
@@ -60,9 +62,9 @@ utils.cfgplugin("formatter", function(formatter)
 			--["*"] = format_kind("any").remove_trailing_whitespace,
 		},
 	})
-    wk.add({
-        {"<leader>cf", ":Format<CR>", desc = "Format current file" },
-    })
+	wk.add({
+		{ "<leader>cf", ":Format<CR>", desc = "Format current file" },
+	})
 	vim.cmd([[
         augroup FormatAutogroup
           autocmd!
