@@ -2,5 +2,5 @@
 (pycode_block
   (pycode_line
     (pycode_line_content) @injection.content)
-  (#set! injection.language "python")
-  (#set! injection.combined "true"))
+  (#set! injection.language "python"))
+

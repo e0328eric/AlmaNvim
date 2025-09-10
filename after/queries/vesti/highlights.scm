@@ -12,6 +12,7 @@
 ((KEYWORD_useenv) @keyword)
 ((KEYWORD_begenv) @keyword)
 ((KEYWORD_endenv) @keyword)
+((KEYWORD_defun) @keyword)
 ((KEYWORD_makeatletter) @keyword)
 ((KEYWORD_makeatother) @keyword)
 ((KEYWORD_ltx3on) @keyword)
