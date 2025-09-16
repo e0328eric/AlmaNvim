@@ -13,16 +13,17 @@
 ((KEYWORD_begenv) @keyword)
 ((KEYWORD_endenv) @keyword)
 ((KEYWORD_defun) @keyword)
+((KEYWORD_defenv) @keyword)
 ((KEYWORD_makeatletter) @keyword)
 ((KEYWORD_makeatother) @keyword)
 ((KEYWORD_ltx3on) @keyword)
 ((KEYWORD_ltx3off) @keyword)
 ((KEYWORD_nonstopmode) @keyword)
+((KEYWORD_textmode) @keyword)
 ((KEYWORD_mathmode) @keyword)
 ((KEYWORD_compty) @keyword)
-((KEYWORD_pycode) @keyword)
-(pycode_block (pycode_start) @keyword)
-(pycode_block (pycode_end)   @keyword)
+((KEYWORD_pycode) @function)
+((KEYWORD_endpycode) @function)
 
 ;; Identifiers
 ((class_pkg_name) @type)
@@ -39,6 +40,7 @@
 ((options) @constant)
 ((mandantory_arg) @constant)
 ((optional_arg) @constant)
+((defenv_optional_arg) @function)
 
 ;; Comments
 ((comment) @comment)
