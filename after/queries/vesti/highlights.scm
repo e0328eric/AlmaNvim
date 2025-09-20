@@ -22,8 +22,8 @@
 ((KEYWORD_textmode) @keyword)
 ((KEYWORD_mathmode) @keyword)
 ((KEYWORD_compty) @keyword)
-((KEYWORD_pycode) @function)
-((KEYWORD_endpycode) @function)
+((KEYWORD_jlcode) @constant)
+((KEYWORD_endjlcode) @constant)
 
 ;; Identifiers
 ((class_pkg_name) @type)
