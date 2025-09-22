@@ -1,4 +1,3 @@
 (jlcode_block
-  (jlcode_line_content) @injection.content
+  (jlcode_payload) @injection.content
   (#set! injection.language "julia"))
-

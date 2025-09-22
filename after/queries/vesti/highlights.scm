@@ -23,7 +23,7 @@
 ((KEYWORD_mathmode) @keyword)
 ((KEYWORD_compty) @keyword)
 ((KEYWORD_jlcode) @constant)
-((KEYWORD_endjlcode) @constant)
+((jlcode_end) @constant)
 
 ;; Identifiers
 ((class_pkg_name) @type)
