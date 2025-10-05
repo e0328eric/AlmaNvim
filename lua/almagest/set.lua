@@ -1,6 +1,8 @@
 -- General config
 vim.opt.autoindent = true
 vim.opt.autoread = true
+--vim.opt.cindent = false
+--vim.opt.cinoptions:remove("#")
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 vim.opt.encoding = "utf-8"
@@ -24,7 +26,7 @@ vim.opt.scrolloff = 3
 vim.opt.shiftwidth = 4
 vim.opt.showmode = false
 vim.opt.signcolumn = "yes"
-vim.opt.smartindent = true
+vim.opt.smartindent = false
 vim.opt.smarttab = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
