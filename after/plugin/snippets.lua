@@ -95,7 +95,7 @@ utils.cfgplugin("luasnip", function(ls)
 	ls.add_snippets("vesti", {
 		s({ trig = "MK", snippetType = "autosnippet" }, { t("$"), i(1), t("$") }),
 		s("be", { t({ "$$", "    " }), i(1), t({ "", "$$", "" }) }),
-		s("eq", { t({ "useenv equation { \\label{"}), i(1), t({"}", "    " }), i(2), t({ "", "}", "" }) }),
+		s("eq", { t({ "#eq (" }), i(1), t({ ") {", "    " }), i(2), t({ "", "}", "" }) }),
 	})
 
 	ls.add_snippets("c", {
