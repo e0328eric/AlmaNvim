@@ -19,8 +19,8 @@
 ((KEYWORD_ltx3on) @keyword)
 ((KEYWORD_ltx3off) @keyword)
 ((KEYWORD_compty) @keyword)
-((KEYWORD_jlcode) @constant)
-((jlcode_end) @constant)
+((KEYWORD_luacode) @constant)
+((luacode_end) @constant)
 
 ;; Identifiers
 ((class_pkg_name) @type)

@@ -1,3 +1,3 @@
-(jlcode_block
-  (jlcode_payload) @injection.content
-  (#set! injection.language "julia"))
+(luacode_block
+  (luacode_payload) @injection.content
+  (#set! injection.language "lua"))
