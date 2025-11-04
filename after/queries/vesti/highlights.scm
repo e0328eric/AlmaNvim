@@ -19,8 +19,8 @@
 ((KEYWORD_ltx3on) @keyword)
 ((KEYWORD_ltx3off) @keyword)
 ((KEYWORD_compty) @keyword)
-((KEYWORD_luacode) @constant)
-((luacode_end) @constant)
+((KEYWORD_luacode) @type)
+((luacode_end) @type)
 
 ;; Identifiers
 ((class_pkg_name) @type)
@@ -31,14 +31,10 @@
 ((inline_math) @string)
 ((display_math) @string)
 
-((singleline_raw_latex) @type)
-((multiline_raw_latex) @type)
-
 ;; Options and environment arguments
 ((options) @constant)
 ((mandantory_arg) @constant)
 ((optional_arg) @constant)
-((defenv_optional_arg) @function)
 
 ;; Comments
 ((comment) @comment)
