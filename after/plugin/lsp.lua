@@ -4,11 +4,8 @@ require("mason-lspconfig").setup({
 	automatic_installation = { exclude = { "zls", "hls", "vuels", "pylsp", "cmake", "clangd" } },
 })
 
-local util = require("lspconfig.util")
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-local lspconfig = require("lspconfig")
-local lspconfig_util = require("lspconfig.util")
 local wk = require("which-key")
 
 --  ╭──────────────────────────────────────────────────────────╮
@@ -191,6 +188,7 @@ vim.diagnostic.config({
 	},
 })
 
+--[[
 local lsp_configurations = {
 	-- { name = "ccls", config = nil },
 	{ name = "cmake", config = nil },
@@ -227,18 +225,39 @@ local lsp_configurations = {
 		},
 	},
 }
+--]]
+local servers = {
+	cmake = {},
+	omnisharp = {},
+	hls = {},
+	kotlin_language_server = {},
+	lua_ls = {},
+	nim_langserver = {},
+	pylsp = {},
+	taplo = {},
+	zls = {},
+	tinymist = {
+		single_file_support = true,
+	},
+	rust_analyzer = {
+		settings = {
+			["rust-analyzer"] = {
+				check = {
+					command = "clippy",
+				},
+				diagnostics = {
+					enable = false,
+				},
+				singleFileSupport = true,
+			},
+		},
+	},
+}
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-for _, lsp in ipairs(lsp_configurations) do
-	if lsp.config == nil then
-		lspconfig[lsp.name].setup({
-			capabilities = capabilities,
-		})
-	else
-		local config = lsp.config
-		config.capabilities = capabilities
-		lspconfig[lsp.name].setup(config)
-	end
+for name, cfg in pairs(servers) do
+	cfg.capabilities = capabilities
+	vim.lsp.config(name, cfg)
 end
 
 -- Global mappings.
