@@ -53,11 +53,6 @@ return {
 	},
 
 	-- LSP
-	{
-		"neovim/nvim-lspconfig",
-		branch = "master",
-		commit = nil,
-	},
 	"mhartington/formatter.nvim",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",

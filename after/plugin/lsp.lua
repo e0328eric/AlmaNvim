@@ -141,8 +141,6 @@ cmp.setup({
 	},
 })
 
---local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 ---------------------------------------------------------------------------------------------------
 --    UI Settings
 ---------------------------------------------------------------------------------------------------
@@ -188,44 +186,6 @@ vim.diagnostic.config({
 	},
 })
 
---[[
-local lsp_configurations = {
-	-- { name = "ccls", config = nil },
-	{ name = "cmake", config = nil },
-	{ name = "omnisharp", config = nil },
-	--{ name = "gopls", config = nil },
-	{ name = "hls", config = nil },
-	{ name = "kotlin_language_server", config = nil },
-	{ name = "lua_ls", config = nil },
-	{ name = "nim_langserver", config = nil },
-	{ name = "pylsp", config = nil },
-	{ name = "taplo", config = nil },
-	{ name = "zls", config = nil },
-	{
-		name = "tinymist",
-		config = {
-			root_dir = lspconfig_util.root_pattern("*.typ"),
-			single_file_support = true,
-		},
-	},
-	{
-		name = "rust_analyzer",
-		config = {
-			settings = {
-				["rust-analyzer"] = {
-					check = {
-						command = "clippy",
-					},
-					diagnostics = {
-						enable = false,
-					},
-					singleFileSupport = true,
-				},
-			},
-		},
-	},
-}
---]]
 local servers = {
 	cmake = {},
 	omnisharp = {},
@@ -235,7 +195,11 @@ local servers = {
 	nim_langserver = {},
 	pylsp = {},
 	taplo = {},
-	zls = {},
+	zls = {
+		cmd = { "zls" },
+		filetypes = { "zig" },
+		root_markers = { "build.zig", ".git" },
+	},
 	tinymist = {
 		single_file_support = true,
 	},
@@ -259,6 +223,9 @@ for name, cfg in pairs(servers) do
 	cfg.capabilities = capabilities
 	vim.lsp.config(name, cfg)
 end
+
+-- enable lsps
+vim.lsp.enable(vim.tbl_keys(servers))
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
