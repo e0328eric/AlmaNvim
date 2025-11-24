@@ -32,7 +32,6 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
-vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.textwidth = 80
 vim.opt.undofile = true

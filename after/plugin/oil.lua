@@ -47,7 +47,7 @@ utils.cfgplugin("oil", function(oil)
 			["<C-s>"] = { "actions.select", opts = { vertical = true } },
 			["<C-h>"] = { "actions.select", opts = { horizontal = true } },
 			["<C-t>"] = { "actions.select", opts = { tab = true } },
-			["<C-p>"] = "actions.preview",
+			["gp"] = "actions.preview",
 			["<C-c>"] = { "actions.close", mode = "n" },
 			["<C-l>"] = "actions.refresh",
 			["-"] = { "actions.parent", mode = "n" },
@@ -59,7 +59,7 @@ utils.cfgplugin("oil", function(oil)
 			["g."] = { "actions.toggle_hidden", mode = "n" },
 			["g\\"] = { "actions.toggle_trash", mode = "n" },
 		},
-		use_default_keymaps = true,
+		use_default_keymaps = false,
 		view_options = {
 			show_hidden = false,
 			is_hidden_file = function(name, bufnr)

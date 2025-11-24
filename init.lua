@@ -31,6 +31,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.opt.termguicolors = true
+
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
 	print("ERROR: Something wrong to bootstrap neovim")
