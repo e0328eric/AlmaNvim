@@ -588,7 +588,47 @@ ins_right({
 })
 
 ins_right(create_separator("right"))
+ins_right({
+	"fileformat",
+	fmt = string.upper,
+	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+	color = function()
+		local mode_color = get_mode_color()
+		return {
+			fg = colors.BG,
+			bg = get_opposite_color(mode_color),
+			gui = "bold",
+		}
+	end,
+})
+ins_right({
+	function()
+		return ""
+	end,
+	color = function()
+		local mode_color = get_mode_color()
+		return {
+			fg = mode_color,
+			bg = get_opposite_color(mode_color),
+			gui = "bold",
+		}
+	end,
+	padding = {
+		left = 0,
+	},
+})
 
-ins_right(create_mode_based_component("progress", nil, colors.BG))
+ins_right({
+	"progress",
+	color = function()
+		local mode_color = get_mode_color()
+		return {
+			fg = colors.BG,
+			bg = mode_color,
+			gui = "bold",
+		}
+	end,
+	padding = { left = 1, right = 1 },
+})
 
 require("lualine").setup(config)
