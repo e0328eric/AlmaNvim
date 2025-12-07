@@ -19,7 +19,8 @@
 ((KEYWORD_ltx3on) @keyword)
 ((KEYWORD_ltx3off) @keyword)
 ((KEYWORD_compty) @keyword)
-((KEYWORD_luacode) @type)
+
+((luacode_start) @type)
 ((luacode_end) @type)
 
 ;; Identifiers
@@ -41,3 +42,4 @@
 
 ;; Comments
 ((comment) @comment)
+

@@ -8,15 +8,26 @@ local function run_vesti()
 		stderr_buffered = true,
 		stdout_buffered = true,
 
-		on_stdout = function() end,
-		on_stderr = function(_, data, _)
+		on_stderr = function(_, data, event)
 			-- data is a table of lines, or nil at stream close
 			if not data then
 				return
 			end
 			for _, line in ipairs(data) do
 				if line and line:match("%S") then -- non-empty / non-whitespace
-					table.insert(err_lines, line)
+					table.insert(err_lines, "[stderr] " .. line)
+				end
+			end
+		end,
+
+		on_stdout = function(_, data, event)
+			if not data then
+				return
+			end
+			for _, line in ipairs(data) do
+				if line and line:match("%S") then
+					-- Optionally also show stdout in quickfix so you see context
+					table.insert(err_lines, "[stdout] " .. line)
 				end
 			end
 		end,

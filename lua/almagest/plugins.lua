@@ -103,6 +103,7 @@ return {
 	"JuliaEditorSupport/julia-vim",
 	"dpezto/gnuplot.vim",
 	"ron-rs/ron.vim",
+    "whonore/Coqtail",
 	"kaarmu/typst.vim",
 	{
 		"saecki/crates.nvim",
