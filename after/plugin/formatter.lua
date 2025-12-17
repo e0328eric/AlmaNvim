@@ -54,7 +54,7 @@ utils.cfgplugin("formatter", function(formatter)
 			javascript = format_kind("javascript").prettier,
 			json = format_kind("json").prettier,
 			lua = format_kind("lua").stylua,
-			python = format_kind("python").black,
+			--python = format_kind("python").black,
 			rust = format_kind("rust").rustfmt,
 			toml = format_kind("toml").taplo,
 			vue = format_kind("vue").prettier,
