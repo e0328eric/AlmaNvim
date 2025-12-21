@@ -53,7 +53,10 @@ return {
 	},
 
 	-- LSP
-	"mhartington/formatter.nvim",
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    },
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"hrsh7th/cmp-buffer",
