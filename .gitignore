@@ -1,0 +1,3 @@
+/nvim-pack-lock.json
+# Leftover from lazy.nvim. Safe to delete together with stdpath("data")/lazy.
+/lazy-lock.json
