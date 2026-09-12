@@ -40,7 +40,6 @@
   "#aos"
   "#soa"
   "#operator"
-  "#precedence"
   "#modify"
   "#expand"
   "#magic"
