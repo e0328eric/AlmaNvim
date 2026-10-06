@@ -4,7 +4,6 @@
 ((KEYWORD_docclass) @keyword)
 ((KEYWORD_importpkg) @keyword)
 ((KEYWORD_importmod) @keyword)
-((KEYWORD_copyfile) @keyword)
 ((KEYWORD_importves) @keyword)
 ((KEYWORD_startdoc) @keyword)
 ((KEYWORD_useenv) @keyword)
@@ -12,10 +11,10 @@
 ((KEYWORD_endenv) @keyword)
 ((KEYWORD_defun) @keyword)
 ((KEYWORD_defenv) @keyword)
-((KEYWORD_compty) @keyword)
 
 ((luacode_start) @type)
 ((luacode_end) @type)
+((lua_name) @variable)
 
 ;; Identifiers
 ((class_pkg_name) @type)
@@ -38,3 +37,23 @@
 ((line_comment) @comment)
 ((long_comment) @comment)
 
+;; Native tables
+[
+  (table_kind)
+  (table_section_name)
+  "columns"
+  "col"
+  "row"
+  "cell"
+  "hline"
+  "vline"
+  "keep"
+  "break"
+  "nobreak"
+] @keyword
+
+(table_option_name) @property
+(table_option value: (table_identifier) @constant)
+(table_call function: (table_identifier) @function.builtin)
+(table_register) @constant.builtin
+[(table_dimension) (table_number)] @number

@@ -5,9 +5,12 @@
   (block)
   (for_statement)
   (pattern_arm)
+  (on_drop_error_statement)
 ] @local.scope
 
 ; Parameters
+(receiver_parameter
+  (self_expression) @local.definition)
 (parameter
   name: (binding_list [
     (identifier)
@@ -28,6 +31,8 @@
   ] @local.definition))
 (lambda_parameter
   name: (identifier) @local.definition)
+(on_drop_error_statement
+  error: (identifier) @local.definition)
 
 ; Local bindings prevent a same-named outer parameter from leaking through a
 ; shadowing declaration.
@@ -51,4 +56,5 @@
   (identifier)
   (code_splice_identifier)
   (non_hygienic_identifier)
+  (self_expression)
 ] @local.reference

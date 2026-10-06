@@ -50,7 +50,7 @@
   "#no_context"
   "#dump"
   "#must"
-  "#noreturn"
+  "#on_drop_error"
   "#returns_twice"
   "#inline"
   "#bytes"
@@ -72,6 +72,8 @@
   "#disable"
   "#derive"
   "#assert"
+  "#public"
+  "#private"
 ] @attribute
 
 (from_directive) @attribute
@@ -89,6 +91,9 @@
 (context_expression) @constant.builtin
 (source_location_expression) @constant.builtin
 (context_type) @type.builtin
+(self_type) @type.builtin
+(never_type) @type.builtin
+(self_expression) @variable.builtin
 
 ; Give every identifier a baseline capture first. Context-specific captures below
 ; must come later so clients that resolve overlapping captures by query order do
@@ -192,6 +197,7 @@
 (named_argument name: (identifier) @variable.parameter)
 (typeclass_parameter name: (identifier) @variable.parameter)
 (lambda_parameter name: (identifier) @variable.parameter)
+(on_drop_error_statement error: (identifier) @variable.parameter)
 (parameter
   name: (binding_list [
     (identifier)
@@ -254,6 +260,8 @@
     (code_splice_identifier)
     (quoted_operator)
   ] @function))
+(inherent_method
+  name: (identifier) @function)
 (postfix_expression
   function: [
     (identifier)
@@ -298,3 +306,7 @@
 (load_modifier "embed" @attribute)
 (expand_directive mode: (identifier) @attribute)
 (insert_scope "scope" @attribute)
+(visibility_modifier "unit" @attribute)
+(receiver_parameter "const" @keyword)
+(operator_try_modifier "try" @attribute)
+(operator_try_modifier target: (identifier) @type)
