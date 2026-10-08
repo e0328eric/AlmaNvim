@@ -50,12 +50,12 @@ au BufRead,BufNewFile *.ves set filetype=vesti
 au BufRead,BufNewFile *.glo set filetype=glosso
 ]])
 
--- vim.treesitter.language.add('vesti', {
---   path = vim.fn.expand('~/.config/nvim/after/parser/vesti.so'),
--- })
--- vim.treesitter.language.add('glosso', {
---   path = vim.fn.expand('~/.config/nvim/after/parser/glosso.so'),
--- })
+vim.treesitter.language.add('vesti', {
+  path = vim.fn.expand('~/.config/nvim/after/parser/vesti.so'),
+})
+vim.treesitter.language.add('glosso', {
+  path = vim.fn.expand('~/.config/nvim/after/parser/glosso.so'),
+})
 
 -- enable tree-sitter highlighting for vesti
 vim.api.nvim_create_autocmd('FileType', {
