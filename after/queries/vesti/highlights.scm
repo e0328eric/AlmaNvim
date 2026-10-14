@@ -36,24 +36,3 @@
 ;; Comments
 ((line_comment) @comment)
 ((long_comment) @comment)
-
-;; Native tables
-[
-  (table_kind)
-  (table_section_name)
-  "columns"
-  "col"
-  "row"
-  "cell"
-  "hline"
-  "vline"
-  "keep"
-  "break"
-  "nobreak"
-] @keyword
-
-(table_option_name) @property
-(table_option value: (table_identifier) @constant)
-(table_call function: (table_identifier) @function.builtin)
-(table_register) @constant.builtin
-[(table_dimension) (table_number)] @number
